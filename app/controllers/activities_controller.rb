@@ -1,6 +1,4 @@
 class ActivitiesController < ApplicationController
-    rescue_from ActiveRecord::RecordInvalid, with: :render_unprocessable_entity
-
     def index
         activities = Activity.all
         render json: activities
@@ -18,12 +16,8 @@ class ActivitiesController < ApplicationController
 
     def update
         activity = find_activity
-        if activity
-            activity.update!(activity_params)
-            render json: activity, status: :accepted
-        else
-            render json: {error: "Activity not found"}, status: :not_found
-        end
+        activity.update!(activity_params)
+        render json: activity, status: :accepted
     end
 
     def destroy
@@ -40,9 +34,5 @@ class ActivitiesController < ApplicationController
 
     def activity_params
         params.permit(:name, :description, :childs_age, :duration)
-    end
-
-    def render_unprocessable_entity (invalid)
-        render json: {errors: invalid.record.errors.full_messages}, status: :unprocessable_entity
     end
 end
