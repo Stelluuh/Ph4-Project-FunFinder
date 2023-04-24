@@ -35,7 +35,7 @@ const UserProvider = ({ children }) => {
 
   return ( 
    //the values in this UserContext object will be available to all the components wrapped inside the UserProvider component
-    <UserContext.Provider value={{ user, signup, login, logout }}> 
+    <UserContext.Provider value={{ user, signup, login, logout, isLoggedIn }}> 
       {children}
     </UserContext.Provider>
   )
