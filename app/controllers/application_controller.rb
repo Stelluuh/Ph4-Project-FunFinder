@@ -17,9 +17,14 @@ class ApplicationController < ActionController::API
   end
 
   # the authorize method will be used as a before_action in other controllers. What it does is set the @current_user instance variable to the user who is logged in, based on the session[:user_id].
-  def authorize 
-      @current_user = User.find_by(id: session[:user_id])
-      render json: {errors: ["Not an authorized user"]}, status: :unauthorized unless @current_user
+  
+  def authorize
+    return render json: {error: "Not Authorized"}, status: :unauthorized unless session.include? :user_id
   end
+  
+  # def authorize #password protection lab
+  #     @current_user = User.find_by(id: session[:user_id])
+  #     render json: {errors: ["Not an authorized user"]}, status: :unauthorized unless @current_user
+  # end
 
 end

@@ -13,15 +13,15 @@ class UsersController < ApplicationController
         render json: user, status: :created
     end
 
-    def show 
-        user = find_user
-        render json: user
-        if user
-            render json: user
-        else
-            render json: {error: "User not found"}
-        end
+    # when a user logs in, they are automatically logged in
+    def show
+        user = find_by(id: session[:user_id])
+        render json: user, status: :ok
     end
+
+    # def show 
+    #     render json: @current_user
+    # end
 
     private
 
