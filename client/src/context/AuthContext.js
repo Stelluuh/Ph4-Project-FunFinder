@@ -9,19 +9,33 @@ const UserProvider = ({ children }) => {
   const [isLoggedIn, setIsLoggedIn] = useState(false)
 
     useEffect(() => {
-        fetch('/me')
-            .then(response => response.json())
-            .then(data => console.log(data))
+        fetch('/me') 
+            .then(response => response.json()) // we are getting the response back from the server and converting it to json
+            .then(data => {
+                console.log(data)
+                setUser(data) // setting the user state to the data we get back from the server
+                data.error ? setIsLoggedIn(false) : setIsLoggedIn(true) // if the data has an error property, set isLoggedIn to false, otherwise set it to true
+            })
     }, [])
 
-    const login =(user) => {
-        setUser(user)
-    }
+   const signup = (user) => {
+      setUser(user) // setting the user state to the data we get back from the server
+      setIsLoggedIn(true) // setting isLoggedIn to true
+   }
 
+   const login =(user) => {
+      setUser(user)
+      setIsLoggedIn(true)
+   }
 
+   const logout = () => {
+      setUser({})
+      setIsLoggedIn(false)
+   }
 
-  return (
-    <UserContext.Provider value={{ user }}>
+  return ( 
+   //the values in this UserContext object will be available to all the components wrapped inside the UserProvider component
+    <UserContext.Provider value={{ user, signup, login, logout }}> 
       {children}
     </UserContext.Provider>
   )
