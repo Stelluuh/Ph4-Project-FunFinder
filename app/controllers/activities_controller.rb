@@ -12,6 +12,8 @@ class ActivitiesController < ApplicationController
     def create
         activity = Activity.create!(activity_params)
         render json: activity, status: :created
+    rescue ActiveRecord::RecordInvalid => invalid
+        render json: {errors: invalid.record.errors.full_messages}, status: :unprocessable_entity
     end
 
     def update
