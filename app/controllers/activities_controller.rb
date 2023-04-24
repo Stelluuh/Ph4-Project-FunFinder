@@ -1,4 +1,6 @@
 class ActivitiesController < ApplicationController
+    rescue_from ActiveRecord::RecordInvalid, with: :render_unprocessable_entity
+
     def index
         activities = Activity.all
         render json: activities
@@ -12,8 +14,6 @@ class ActivitiesController < ApplicationController
     def create
         activity = Activity.create!(activity_params)
         render json: activity, status: :created
-    rescue ActiveRecord::RecordInvalid => invalid
-        render json: {errors: invalid.record.errors.full_messages}, status: :unprocessable_entity
     end
 
     def update
@@ -40,5 +40,9 @@ class ActivitiesController < ApplicationController
 
     def activity_params
         params.permit(:name, :description, :childs_age, :duration)
+    end
+
+    def render_unprocessable_entity (invalid)
+        render json: {errors: invalid.record.errors.full_messages}, status: :unprocessable_entity
     end
 end
