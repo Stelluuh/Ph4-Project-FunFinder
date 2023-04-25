@@ -14,7 +14,7 @@ class SessionsController < ApplicationController
             session[:user_id] = user.id # this is what actually logs the user in. It sets the session user_id to the user's id. This is how we keep track of the user that is logged in.
             render json: user, status: :created # we render the user as json
         else # we render an error:
-            render json: { error: "Invalid username or password" }, status: :unauthorized
+            render json: { errors: ["Invalid username or password"] }, status: :unauthorized
         end
     end
     

@@ -5,7 +5,7 @@ import { UserContext } from './context/AuthContext';
 const Login = () => {
   const [username, setUsername] = useState('')
   const [password, setPassword] = useState('')
-  const [error, setError] = useState('')
+  const [errors, setErrors] = useState([])
 
   const { login } = useContext(UserContext) // we get the login function from the UserContext because we need to update the user state in the UserContext
   const navigate = useNavigate()
@@ -28,21 +28,21 @@ const Login = () => {
     })
       .then(response => response.json()) // we are getting the response back from the server and converting it to json
       .then(user => { // we are getting the user back from the server
-        console.log('from login:', user.error)
-        console.log('from login:', user)
+        console.log('from login- user.error:', user.error)
+        console.log('from login- user:', user)
         // if no errors:
         //   we login the user by calling the login function from the UserContext
         //   direct to homepage
         if(!user.errors) {
-          console.log('from login:', user)
           login(user)
           navigate('/')
         } else {
         // if errors = display on page
-          const allErrors=<li>{user.errors}</li>
-          setError(allErrors)
           setUsername('')
           setPassword('')
+          const logError = user.errors.map((error) => <li>{error}</li>)
+          setErrors(logError)
+        
         }
       })
 
@@ -70,7 +70,7 @@ const Login = () => {
         <input type='submit'/>
         <ul>
           {/* if there are errors, display them here*/}
-          {error}
+          {errors}
         </ul>
       </form>
     </div>
