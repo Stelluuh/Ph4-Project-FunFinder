@@ -1,6 +1,7 @@
 import React, { useState, useContext } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { UserContext } from './context/AuthContext';
+// import Button from '@material-ui/core/Button';
 
 const Login = () => {
   const [username, setUsername] = useState('')
@@ -42,7 +43,6 @@ const Login = () => {
           setPassword('')
           const logError = user.errors.map((error) => <li>{error}</li>)
           setErrors(logError)
-        
         }
       })
 
@@ -68,8 +68,8 @@ const Login = () => {
         />
         <br/>
         <input type='submit'/>
+        {/* <Button type='submit' variant="outlined">submit</Button> */}
         <ul>
-          {/* if there are errors, display them here*/}
           {errors}
         </ul>
       </form>

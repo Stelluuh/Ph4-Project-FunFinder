@@ -21,6 +21,7 @@ const UserProvider = ({ children }) => {
             })
     }, [])
 
+    console.log(user)
 
    const signup = (user) => {
       setUser(user) // setting the user state to the data we get back from the server

@@ -1,11 +1,6 @@
 class UsersController < ApplicationController
     skip_before_action :authorize, only: [:create]
 
-    def index
-        users = User.all
-        render json: users
-    end
-
     # when a user signs up, they are automatically logged in
     def create
         user = User.create!(user_params) 

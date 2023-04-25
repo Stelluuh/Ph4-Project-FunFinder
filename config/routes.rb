@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   
   resources :schedules
   resources :activities
-  resources :users, only: [:index, :create, :show]
+  resources :users, only: [:create, :show]
   post '/login', to: 'sessions#create'
   delete '/logout', to: 'sessions#destroy'
   get '/me', to: 'users#show'
