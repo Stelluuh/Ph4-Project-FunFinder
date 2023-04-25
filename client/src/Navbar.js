@@ -7,8 +7,7 @@ const Navbar = () => {
         <NavLink to="/login">
             <button>Login</button>
         </NavLink>
-        <h3> or </h3>
-        <NavLink to="/login">
+        <NavLink to="/signup">
             <button>Signup</button>
         </NavLink>
     </div>

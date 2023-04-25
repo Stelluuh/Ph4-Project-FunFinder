@@ -4,12 +4,14 @@ import { UserProvider } from './context/AuthContext';
 import Home from './Home';
 import Signup from './Signup';
 import Login from './Login';
+import Navbar from './Navbar';
 import './App.css';
 
 function App() {
   return (
     <div className="App">
       <UserProvider>
+        <Navbar />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/signup" element={<Signup />} />
