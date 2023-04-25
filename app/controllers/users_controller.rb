@@ -14,14 +14,14 @@ class UsersController < ApplicationController
     end
 
     # when a user logs in, they are automatically logged in
-    def show
-        user = find_by(id: session[:user_id])
-        render json: user, status: :ok
-    end
-
-    # def show 
-    #     render json: @current_user
+    # def show
+    #     user = find_by(id: session[:user_id])
+    #     render json: user, status: :ok
     # end
+
+    def show 
+        render json: @current_user
+    end
 
     private
 
