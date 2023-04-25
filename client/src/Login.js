@@ -5,7 +5,7 @@ import { UserContext } from './context/AuthContext';
 const Login = () => {
   const [username, setUsername] = useState('')
   const [password, setPassword] = useState('')
-  const [error, setError] = useState('')
+  const [errors, setErrors] = useState([])
 
   const { login } = useContext(UserContext) // we get the login function from the UserContext because we need to update the user state in the UserContext
   const navigate = useNavigate()
@@ -15,7 +15,33 @@ const Login = () => {
     // create a POST request to /login
     // if there are no errors, redirect to the home page
     // if there are errors, display them
-
+    fetch('/login', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json' // we are sending json data to the server
+      }, 
+      body: JSON.stringify({ // we are sending the username and password from the form to the server
+        username: username,
+        password: password
+      })
+    })
+      .then(response => response.json()) // we are getting the response back from the server and converting it to json
+      .then(user => { // we are getting the user back from the server
+        console.log('from login:', user.error)
+        // if no errors:
+        //   we login the user by calling the login function from the UserContext
+        //   direct to homepage
+        if(!user.error) {
+          login(user)
+          navigate('/')
+        } else {
+        // if errors = display on page
+          const allErrors=<li>{user.error}</li>
+          setErrors(allErrors)
+          setUsername('')
+          setPassword('')
+        }
+      })
 
   }
   return (
@@ -41,6 +67,7 @@ const Login = () => {
         <input type='submit'/>
         <ul>
           {/* if there are errors, display them here*/}
+          {errors}
         </ul>
       </form>
     </div>
