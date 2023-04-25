@@ -5,7 +5,7 @@ import { UserContext } from './context/AuthContext';
 const Login = () => {
   const [username, setUsername] = useState('')
   const [password, setPassword] = useState('')
-  const [errors, setErrors] = useState([])
+  const [error, setError] = useState('')
 
   const { login } = useContext(UserContext) // we get the login function from the UserContext because we need to update the user state in the UserContext
   const navigate = useNavigate()
@@ -37,7 +37,7 @@ const Login = () => {
         } else {
         // if errors = display on page
           const allErrors=<li>{user.error}</li>
-          setErrors(allErrors)
+          setError(allErrors)
           setUsername('')
           setPassword('')
         }
@@ -67,7 +67,7 @@ const Login = () => {
         <input type='submit'/>
         <ul>
           {/* if there are errors, display them here*/}
-          {errors}
+          {error}
         </ul>
       </form>
     </div>
