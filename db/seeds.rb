@@ -1,3 +1,5 @@
+
+puts 'Seeding database...'
 # activities
 Activity.create(name: "Swimming Lessons", description: "Learn to swim with our certified instructors", childs_age: 5, duration: 30)
 Activity.create(name: "Art Class", description: "Explore your creativity through painting, drawing and more", childs_age: 7, duration: 60)
@@ -12,3 +14,4 @@ Schedule.create(time_of_day: "Morning", user_id: 1, activity_id: 1)
 Schedule.create(time_of_day: "Afternoon", user_id: 1, activity_id: 2)
 Schedule.create(time_of_day: "Evening", user_id: 2, activity_id: 3)
 
+puts 'Seeded database!'

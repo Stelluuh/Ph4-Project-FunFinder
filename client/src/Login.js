@@ -15,6 +15,7 @@ const Login = () => {
     // create a POST request to /login
     // if there are no errors, redirect to the home page
     // if there are errors, display them
+    
     fetch('/login', {
       method: 'POST',
       headers: {
@@ -28,15 +29,17 @@ const Login = () => {
       .then(response => response.json()) // we are getting the response back from the server and converting it to json
       .then(user => { // we are getting the user back from the server
         console.log('from login:', user.error)
+        console.log('from login:', user)
         // if no errors:
         //   we login the user by calling the login function from the UserContext
         //   direct to homepage
-        if(!user.error) {
+        if(!user.errors) {
+          console.log('from login:', user)
           login(user)
           navigate('/')
         } else {
         // if errors = display on page
-          const allErrors=<li>{user.error}</li>
+          const allErrors=<li>{user.errors}</li>
           setError(allErrors)
           setUsername('')
           setPassword('')

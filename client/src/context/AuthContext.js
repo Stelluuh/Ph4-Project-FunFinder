@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react'
+import { useNavigate } from 'react-router-dom'
 
 //This will be used to create a context object with a default value of null
 const UserContext = React.createContext();
@@ -7,16 +8,18 @@ const UserContext = React.createContext();
 const UserProvider = ({ children }) => {
   const [user, setUser] = useState({})
   const [isLoggedIn, setIsLoggedIn] = useState(false)
-
+  
+  const navigate = useNavigate()
+  
     useEffect(() => {
         fetch('/me') 
             .then(response => response.json()) // we are getting the response back from the server and converting it to json
             .then(data => {
                 console.log('from authcontext:', data)
                 setUser(data) // setting the user state to the data we get back from the server
-                data.error ? setIsLoggedIn(false) : setIsLoggedIn(true) // if the data has an error property, set isLoggedIn to false, otherwise set it to true
+                data.errors ? setIsLoggedIn(false) : setIsLoggedIn(true) // if the data has an error property, set isLoggedIn to false, otherwise set it to true
             })
-    }, [isLoggedIn])
+    }, [])
 
 
    const signup = (user) => {
@@ -32,6 +35,8 @@ const UserProvider = ({ children }) => {
    const logout = () => {
       setUser({})
       setIsLoggedIn(false)
+      navigate('/')
+      
    }
 
   return ( 
