@@ -16,14 +16,15 @@ const UserProvider = ({ children }) => {
                 setUser(data) // setting the user state to the data we get back from the server
                 data.error ? setIsLoggedIn(false) : setIsLoggedIn(true) // if the data has an error property, set isLoggedIn to false, otherwise set it to true
             })
-    }, [])
+    }, [isLoggedIn])
+
 
    const signup = (user) => {
       setUser(user) // setting the user state to the data we get back from the server
       setIsLoggedIn(true) // setting isLoggedIn to true
    }
 
-   const login =(user) => {
+   const login =(user) => { // we are getting the user back from the server (login.js file line 50)
       setUser(user)
       setIsLoggedIn(true)
    }

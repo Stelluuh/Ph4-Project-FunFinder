@@ -10,16 +10,20 @@ const Home = () => {
   const navigate = useNavigate()
   const { user, isLoggedIn } = useContext(UserContext)
 
-    if(isLoggedIn) {
+    if(isLoggedIn) { // if the user is logged in, display the home page
       return (
         <div>
           <h1>Hello {user.username}</h1>
         </div>
       )
-    } else {
+    } else { // if the user is not logged in, redirect to the login page
       <h3>Please Login or Signup</h3>
-      navigate('/login')
+      // navigate('/login')
     }
+
+    //q: how do I keep the user logged in after hitting refresh?
+    //a: we need to make a request to the server to check if the user is logged in
+    //   we can do this in the useEffect hook in the AuthContext.js file
   
   return (
     <div>

@@ -10,6 +10,7 @@ class SessionsController < ApplicationController
             # what this does is check if the user exists. adding .authenticate is a method given by bcrypt that checks if the password is correct.
         if user&.authenticate(params[:password]) 
             session[:user_id] = user.id # this is what actually logs the user in. It sets the session user_id to the user's id. This is how we keep track of the user that is logged in.
+            render json: user, status: :created
         else # we render an error:
             render json: { error: "Invalid username or password" }, status: :unauthorized
         end
