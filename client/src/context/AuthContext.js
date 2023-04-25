@@ -12,7 +12,7 @@ const UserProvider = ({ children }) => {
         fetch('/me') 
             .then(response => response.json()) // we are getting the response back from the server and converting it to json
             .then(data => {
-                console.log(data)
+                console.log('from authcontext:', data)
                 setUser(data) // setting the user state to the data we get back from the server
                 data.error ? setIsLoggedIn(false) : setIsLoggedIn(true) // if the data has an error property, set isLoggedIn to false, otherwise set it to true
             })

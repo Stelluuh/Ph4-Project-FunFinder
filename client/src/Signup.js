@@ -1,4 +1,5 @@
 import React, { useState, useContext } from 'react'
+import { useNavigate } from 'react-router-dom'
 import { UserContext } from './context/AuthContext';
 
 const Signup = () => {
@@ -8,6 +9,8 @@ const Signup = () => {
     const [passwordConfirmation, setPasswordConfirmation] = useState('')
     const [errorsList, setErrorsList] = useState([])
     const { signup } = useContext(UserContext)
+
+    const navigate = useNavigate()
 
     const handleSubmit = (e) => {
         e.preventDefault()
@@ -27,13 +30,18 @@ const Signup = () => {
         })
             .then(response => response.json()) // we are getting the response back from the server and converting it to json
             .then(user => {
+                console.log(user)
                 // we signup the user by calling the signup function from the UserContext
-                    if (!user.error) {
+                    if (!user.errors) {
                         signup(user)
                         // if there are no errors, redirect to the home page? navigate('/')
+                        navigate('/')
                     } else {
-                        const listErrors = user.error.map((error) => <li>{error}</li>)
+                        const listErrors = user.errors.map((error) => <li>{error}</li>)
                         setErrorsList(listErrors)
+                        setUsername('')
+                        setPassword('')
+                        setPasswordConfirmation('')
                     }
                     //We do this by using the navigate function from react-router-dom
                 // if there are errors, display them.
@@ -60,17 +68,20 @@ const Signup = () => {
                 onChange={(e) => setUsername(e.target.value)}
             />
             <input
+                type='password'
                 placeholder="password"
                 id="password"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
             />
             <input
+                type='password'
                 placeholder="passwordConfirmation"
                 id="passwordConfirmation"
                 value={passwordConfirmation}
                 onChange={(e) => setPasswordConfirmation(e.target.value)}
             />
+            <input type='submit'/>
         </form>
         <hr/>
         <li>
