@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-    skip_before_action :authorize, only: [:create]
+    skip_before_action :authorize, only: [:create] # we skip the authorize method for the create action because we don't want to authorize a user when they are signing up
 
     # when a user signs up, they are automatically logged in
     def create

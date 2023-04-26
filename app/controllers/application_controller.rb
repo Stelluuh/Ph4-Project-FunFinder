@@ -4,7 +4,7 @@ class ApplicationController < ActionController::API
   rescue_from ActiveRecord::RecordInvalid, with: :render_unprocessable_entity
   rescue_from ActiveRecord::RecordNotFound, with: :render_not_found_response
 
-  before_action :authorize # we call the authorize method before any action is taken
+  before_action :authorize # we call the authorize method before every single action
 
   private
 
