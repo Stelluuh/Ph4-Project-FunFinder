@@ -1,0 +1,94 @@
+<mxfile host="65bd71144e">
+    <diagram id="dE7_v0eynPNAWBCFGoDM" name="Page-1">
+        <mxGraphModel dx="698" dy="520" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="2" value="" style="whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="250" y="60" width="280" height="290" as="geometry"/>
+                </mxCell>
+                <mxCell id="3" value="Signup" style="whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="350" y="280" width="80" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="4" value="Login" style="whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="350" y="240" width="80" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="5" value="Form with inputs for Login" style="whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="305" y="100" width="170" height="130" as="geometry"/>
+                </mxCell>
+                <mxCell id="6" value="Dashboard/Home Screen&lt;br&gt;&lt;br&gt;Welcome, {User.name}&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;" style="whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="160" y="400" width="540" height="610" as="geometry"/>
+                </mxCell>
+                <mxCell id="7" value="" style="whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="200" y="510" width="460" height="460" as="geometry"/>
+                </mxCell>
+                <mxCell id="8" value="Home&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; Activities&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; Logout" style="whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="170" y="410" width="260" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="9" value="Activity of the Day" style="whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="360" y="530" width="120" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="10" value="Morning: There are no activities" style="whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="230" y="600" width="400" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="11" value="Afternoon: 1 scheduled activity" style="whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="230" y="710" width="400" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="12" value="Evening: 2 scheduled activites" style="whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="230" y="830" width="400" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="13" value="" style="whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="155" y="1120" width="545" height="680" as="geometry"/>
+                </mxCell>
+                <mxCell id="14" value="Welcome to the Activities Page where you can add, remove, edit, and delete activities. You can pick and choose to add an activitiy for today or for the future.&amp;nbsp;" style="whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="230" y="1180" width="390" height="90" as="geometry"/>
+                </mxCell>
+                <mxCell id="15" value="Title:&lt;br&gt;Age Group:&lt;br&gt;Duration" style="whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="235" y="1350" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="16" value="Title:&lt;br&gt;Age Group:&lt;br&gt;Duration" style="whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="235" y="1420" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="17" value="Title:&lt;br&gt;Age Group:&lt;br&gt;Duration" style="whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="505" y="1350" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="18" value="Title:&lt;br&gt;Age Group:&lt;br&gt;Duration" style="whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="375" y="1350" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="19" value="Title:&lt;br&gt;Age Group:&lt;br&gt;Duration" style="whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="375" y="1420" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="20" value="Title:&lt;br&gt;Age Group:&lt;br&gt;Duration" style="whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="505" y="1420" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="21" value="+" style="shape=stencil(tZThDoIgEICfhr8NYT1Ao3oP0jOZBAwo6+1D0S1NXWu4Oba70+8+kRNR5ipuABFcIXpEhGQYhzXEzSTmzkDuY/LBreAXCbHivNU1NKLwPUOoCqzwbZWeED6Ee9qLslwrFSBCKzeqfNQDjAsVnsXPCOvbv0aRCfwbeLC9ZMwicv4du9tvA8428h1jB/vkvunAY+Nsqw+XDJz9j6UsZJYON2UXntdXq++qmJWx7Vytn/fpME6HdVZooS1lpbaw4lMKKeNMr+wgSCmMg8TeA32xffdiX/5dNv7IusQb);whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="335" y="1460" width="20" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="22" value="+" style="shape=stencil(tZThDoIgEICfhr8NYT1Ao3oP0jOZBAwo6+1D0S1NXWu4Oba70+8+kRNR5ipuABFcIXpEhGQYhzXEzSTmzkDuY/LBreAXCbHivNU1NKLwPUOoCqzwbZWeED6Ee9qLslwrFSBCKzeqfNQDjAsVnsXPCOvbv0aRCfwbeLC9ZMwicv4du9tvA8428h1jB/vkvunAY+Nsqw+XDJz9j6UsZJYON2UXntdXq++qmJWx7Vytn/fpME6HdVZooS1lpbaw4lMKKeNMr+wgSCmMg8TeA32xffdiX/5dNv7IusQb);whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="475" y="1460" width="20" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="23" value="+" style="shape=stencil(tZThDoIgEICfhr8NYT1Ao3oP0jOZBAwo6+1D0S1NXWu4Oba70+8+kRNR5ipuABFcIXpEhGQYhzXEzSTmzkDuY/LBreAXCbHivNU1NKLwPUOoCqzwbZWeED6Ee9qLslwrFSBCKzeqfNQDjAsVnsXPCOvbv0aRCfwbeLC9ZMwicv4du9tvA8428h1jB/vkvunAY+Nsqw+XDJz9j6UsZJYON2UXntdXq++qmJWx7Vytn/fpME6HdVZooS1lpbaw4lMKKeNMr+wgSCmMg8TeA32xffdiX/5dNv7IusQb);whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="605" y="1460" width="20" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="24" value="+" style="shape=stencil(tZThDoIgEICfhr8NYT1Ao3oP0jOZBAwo6+1D0S1NXWu4Oba70+8+kRNR5ipuABFcIXpEhGQYhzXEzSTmzkDuY/LBreAXCbHivNU1NKLwPUOoCqzwbZWeED6Ee9qLslwrFSBCKzeqfNQDjAsVnsXPCOvbv0aRCfwbeLC9ZMwicv4du9tvA8428h1jB/vkvunAY+Nsqw+XDJz9j6UsZJYON2UXntdXq++qmJWx7Vytn/fpME6HdVZooS1lpbaw4lMKKeNMr+wgSCmMg8TeA32xffdiX/5dNv7IusQb);whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="605" y="1390" width="20" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="25" value="+" style="shape=stencil(tZThDoIgEICfhr8NYT1Ao3oP0jOZBAwo6+1D0S1NXWu4Oba70+8+kRNR5ipuABFcIXpEhGQYhzXEzSTmzkDuY/LBreAXCbHivNU1NKLwPUOoCqzwbZWeED6Ee9qLslwrFSBCKzeqfNQDjAsVnsXPCOvbv0aRCfwbeLC9ZMwicv4du9tvA8428h1jB/vkvunAY+Nsqw+XDJz9j6UsZJYON2UXntdXq++qmJWx7Vytn/fpME6HdVZooS1lpbaw4lMKKeNMr+wgSCmMg8TeA32xffdiX/5dNv7IusQb);whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="475" y="1390" width="20" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="26" value="+" style="shape=stencil(tZThDoIgEICfhr8NYT1Ao3oP0jOZBAwo6+1D0S1NXWu4Oba70+8+kRNR5ipuABFcIXpEhGQYhzXEzSTmzkDuY/LBreAXCbHivNU1NKLwPUOoCqzwbZWeED6Ee9qLslwrFSBCKzeqfNQDjAsVnsXPCOvbv0aRCfwbeLC9ZMwicv4du9tvA8428h1jB/vkvunAY+Nsqw+XDJz9j6UsZJYON2UXntdXq++qmJWx7Vytn/fpME6HdVZooS1lpbaw4lMKKeNMr+wgSCmMg8TeA32xffdiX/5dNv7IusQb);whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="335" y="1390" width="20" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="27" value="View Activity Details: &lt;br&gt;CSS: Pop Up and Blurred Background&lt;br&gt;&lt;br&gt;Title:&lt;br&gt;Age_group:&lt;br&gt;Duration:&lt;br&gt;Description:&lt;br&gt;&lt;br&gt;Add to Today's Activities" style="whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="235" y="1510" width="390" height="250" as="geometry"/>
+                </mxCell>
+                <mxCell id="28" value="Home&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &lt;b&gt;&lt;u&gt;Activities&lt;/u&gt;&lt;/b&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; Logout" style="whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="165" y="1130" width="260" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="29" value="Add New Activity" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="335" y="1290" width="180" height="40" as="geometry"/>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+</mxfile>
