@@ -1,5 +1,6 @@
 import React, { useContext } from 'react'
 import { UserContext } from './context/AuthContext';
+import Schedule from './Schedule';
 
 // This is the home page that will be displayed when the user is logged in
 
@@ -12,6 +13,7 @@ const Home = () => {
       return (
         <div>
           <h1>{user.username} Homepage</h1>
+          <Schedule />
         </div>
       )
     } else { 
