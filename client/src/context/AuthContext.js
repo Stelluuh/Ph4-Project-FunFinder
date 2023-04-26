@@ -8,6 +8,7 @@ const UserContext = React.createContext();
 const UserProvider = ({ children }) => {
   const [user, setUser] = useState({})
   const [isLoggedIn, setIsLoggedIn] = useState(false)
+  const [schedules, setSchedules] = useState([])
   
   const navigate = useNavigate()
   
@@ -15,13 +16,41 @@ const UserProvider = ({ children }) => {
         fetch('/me') 
             .then(response => response.json()) // we are getting the response back from the server and converting it to json
             .then(data => {
-                console.log('from authcontext:', data)
+                
                 setUser(data) // setting the user state to the data we get back from the server
-                data.errors ? setIsLoggedIn(false) : setIsLoggedIn(true) // if the data has an error property, set isLoggedIn to false, otherwise set it to true
+                if (data.errors) { // if the data has an error property, set isLoggedIn to false, otherwise set it to true
+                  setIsLoggedIn(false)
+                } else {
+                  setIsLoggedIn(true)
+                  getSchedules()
+                }
+                  
+                // data.errors ? setIsLoggedIn(false) : setIsLoggedIn(true) 
             })
     }, [])
 
-    console.log(user)
+    const getSchedules = () => {
+      fetch('/schedules')
+        .then(response => response.json())
+        .then(data => {
+          console.log('from AuthContext: ', data)
+          setSchedules(data)
+        })
+    }
+
+    const addSchedule = (schedule) => { // schedule is the data we get back from the server from a form submission.
+      fetch ('/schedules', {
+        method: 'POST', 
+        headers: {'Content-Type' : 'application/json'},
+        body: JSON.stringify(schedule) // we are converting the schedule object to a string
+      })
+      .then(response => response.json())
+      .then(data => {
+        setSchedules([...schedules, data])
+      })
+    }
+
+    // console.log(user)
 
    const signup = (user) => {
       setUser(user) // setting the user state to the data we get back from the server
@@ -42,7 +71,14 @@ const UserProvider = ({ children }) => {
 
   return ( 
    //the values in this UserContext object will be available to all the components wrapped inside the UserProvider component
-    <UserContext.Provider value={{ user, signup, login, logout, isLoggedIn }}> 
+    <UserContext.Provider value={{ 
+        user, 
+        signup, 
+        login, 
+        logout, 
+        isLoggedIn, 
+        schedules, 
+        addSchedule }}> 
       {children}
     </UserContext.Provider>
   )
