@@ -28,7 +28,7 @@ class SchedulesController < ApplicationController
     end
 
     def destroy
-        #find the schedule that matches the ID from route params
+        #find the schedule OF LOGGED IN USER that matches the ID from route params
         schedule = current_user.schedules.find_by(id: params[:id])
         # if schedule exists, destroy it
         schedule.destroy
@@ -37,6 +37,7 @@ class SchedulesController < ApplicationController
     end
 
     private
+
 
     def current_user
         User.find_by(id: session[:user_id])
