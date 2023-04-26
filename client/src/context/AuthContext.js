@@ -46,7 +46,7 @@ const UserProvider = ({ children }) => {
       })
       .then(response => response.json())
       .then(data => {
-        setSchedules([...schedules, data])
+        setSchedules([...schedules, data]) // we are adding the new schedule to an existing array of schedules
       })
     }
 

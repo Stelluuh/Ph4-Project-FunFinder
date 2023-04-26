@@ -5,6 +5,7 @@ import Home from './Home';
 import Signup from './Signup';
 import Login from './Login';
 import Navbar from './Navbar';
+import Schedules from './Schedules';
 import './App.css';
 
 function App() {
@@ -16,6 +17,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/signup" element={<Signup />} />
           <Route path="/login" element={<Login />} />
+          <Route path="/schedules" element={<Schedules />} />
         </Routes>
       </UserProvider>
     </div>

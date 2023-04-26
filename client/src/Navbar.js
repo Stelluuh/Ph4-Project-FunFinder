@@ -24,7 +24,10 @@ const Navbar = () => {
     if(isLoggedIn) { // if the user is logged in, display the home page
       return (
         <div>
-          <h3>Hello {user.username}. See your activities below:</h3>
+          <h3>Hello {user.username}. Click the button bellow to view your schedule for today</h3>
+          <NavLink to="/schedules">
+              <button>My Daily schedule</button>
+          </NavLink>
           <button onClick={handleLogout}>Logout</button>
         </div>
       )
