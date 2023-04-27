@@ -8,7 +8,6 @@ const UserContext = React.createContext();
 const UserProvider = ({ children }) => {
   const [user, setUser] = useState({})
   const [isLoggedIn, setIsLoggedIn] = useState(false)
-  // const [schedules, setSchedules] = useState([])
   
   const navigate = useNavigate()
   
@@ -22,24 +21,21 @@ const UserProvider = ({ children }) => {
                   setIsLoggedIn(false)
                 } else {
                   setIsLoggedIn(true)
-                  // getSchedules()
                 }
             })
     }, [])
-
-    // const getSchedules = () => {
-    //   fetch('/schedules')
-    //     .then(response => response.json())
-    //     .then(data => {
-    //       // console.log('from AuthContext: ', data)
-    //       setSchedules(data)
-    //     })
-    // }
 
     const addSchedule = (schedule) => { // schedule is the data we get back from the server from a form submission.
       const updatedUser = {...user, schedules: [...user.schedules, schedule]} // we are creating a new user object with the new schedule added to the schedules array
       setUser(updatedUser) // we are setting the user state to the updatedUser object
     
+    }
+
+    const deleteSchedule = (id) => {
+      fetch(`/schedules/${id}`, {
+        method: 'DELETE',
+      })
+      .then(setUser({...user, schedules: [...user.schedules.filter(schedule => schedule.id !== id)]} ))
     }
 
     console.log('User Data: ', user)
@@ -69,7 +65,8 @@ const UserProvider = ({ children }) => {
         login, 
         logout, 
         isLoggedIn, 
-        addSchedule
+        addSchedule,
+        deleteSchedule
        }}> 
       {children}
     </UserContext.Provider>
