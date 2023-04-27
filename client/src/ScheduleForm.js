@@ -1,7 +1,7 @@
 import React, { useState, useContext } from 'react'
 import { UserContext } from './context/AuthContext';
 
-const ScheduleForm = ({ addSchedule }) => {
+const ScheduleForm = () => {
     const [timeOfDay, setTimeOfDay] = useState('')
 
     const {addSchedule} = useContext(UserContext)
@@ -9,11 +9,11 @@ const ScheduleForm = ({ addSchedule }) => {
     const handleSubmit = (e) => {
         e.preventDefault()
         addSchedule({ // we are passing the schedule object to the addSchedule function in AuthContext.js
-            timeOfDay: timeOfDay // this comes from the
+            time_of_day: timeOfDay// this comes from state
         })
-
-
+        console.log(timeOfDay)
     }
+    // console.log('time of day: ', timeOfDay  )
 
     return(
         <div>
@@ -21,13 +21,18 @@ const ScheduleForm = ({ addSchedule }) => {
                 <label>Schedule Form</label>
                 <input 
                     type="text"
-                    name="time of day"
-                    placeholder="time of day: (ex. morning, afternoon, evening)"
+                    name="time_of_day"
+                    placeholder="(ex. morning, afternoon, evening)"
                     value={timeOfDay}
-                    onChange = {(e) => setTimeOfDay(e.target.value)}
+                    onChange = {(e) => {
+                        setTimeOfDay(e.target.value)
+                        // console.log(e.target.value)
+                    }}
                 />
-                <input type="submit" value="Add Schedule" />
+                <input type="submit" value="Add Schedule"/>
             </form>
         </div>
     )
 }
+
+export default ScheduleForm

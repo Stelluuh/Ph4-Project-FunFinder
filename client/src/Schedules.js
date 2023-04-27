@@ -1,11 +1,11 @@
 import React, { useContext } from 'react'
 import { UserContext } from './context/AuthContext'
 import ScheduleCard from './ScheduleCard'
+import ScheduleForm from './ScheduleForm'
 
 
 const Schedules = () => {
   const { user, isLoggedIn } = useContext(UserContext)
-  console.log('from schedules: ', user.schedules)
   
   if (isLoggedIn) { 
     const scheduleList = user?.schedules?.map(schedule => { //adding the ? after user and schedules checks to see if they exits and it will prevent the error 'cannot read properties of undefined(reading 'map) from happening if the user is not logged in
@@ -16,7 +16,7 @@ const Schedules = () => {
       <div>
         <h3>My Schedule</h3> 
         {scheduleList}     
-        <button>Add Schedule</button>
+        <ScheduleForm />
       </div>
     )
   } else {

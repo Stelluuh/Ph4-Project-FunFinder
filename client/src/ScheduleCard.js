@@ -4,6 +4,7 @@ import './styles/ScheduleCard.css'
 
 const ScheduleCard = ({schedule}) => {
     const { deleteSchedule, isLoggedIn } = useContext(UserContext)
+    // console.log(schedule)
 
     if (!isLoggedIn) {
         return (

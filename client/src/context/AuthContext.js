@@ -26,9 +26,15 @@ const UserProvider = ({ children }) => {
     }, [])
 
     const addSchedule = (schedule) => { // schedule is the data we get back from the server from a form submission.
-      const updatedUser = {...user, schedules: [...user.schedules, schedule]} // we are creating a new user object with the new schedule added to the schedules array
-      setUser(updatedUser) // we are setting the user state to the updatedUser object
-    
+      fetch('/schedules', {
+        method: 'POST', 
+        headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify(schedule)
+      })
+      .then(response => response.json())
+      .then(newSchedule => {
+        setUser({ ...user, schedules: [...user.schedules, newSchedule]})
+      })    
     }
 
     const deleteSchedule = (id) => {
