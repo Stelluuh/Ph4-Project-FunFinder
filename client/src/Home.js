@@ -12,7 +12,7 @@ const Home = () => {
     if(isLoggedIn) { // if the user is logged in, display the home page
       return (
         <div>
-          <h1>Hello {user.username}</h1>
+          <h1>{user.name}'s FunFinder</h1>
         
         </div>
       )
