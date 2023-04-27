@@ -9,7 +9,7 @@ const ScheduleForm = ({ addSchedule }) => {
     const handleSubmit = (e) => {
         e.preventDefault()
         addSchedule({ // we are passing the schedule object to the addSchedule function in AuthContext.js
-            timeOfDay: timeOfDay // this comes from the form
+            timeOfDay: timeOfDay // this comes from the
         })
 
 
@@ -22,7 +22,7 @@ const ScheduleForm = ({ addSchedule }) => {
                 <input 
                     type="text"
                     name="time of day"
-                    placeholder="time of day"
+                    placeholder="time of day: (ex. morning, afternoon, evening)"
                     value={timeOfDay}
                     onChange = {(e) => setTimeOfDay(e.target.value)}
                 />
