@@ -5,7 +5,6 @@ import { NavLink, useNavigate } from 'react-router-dom'
 const Navbar = () => {
 
 
-
   const { user, isLoggedIn, logout } = useContext(UserContext)
   const navigate = useNavigate()
 
@@ -27,6 +26,9 @@ const Navbar = () => {
           <h3>Hello {user.name}</h3>
           <NavLink to="/schedules">
               <button>My Daily schedule</button>
+          </NavLink>
+          <NavLink to="/activities">
+              <button>View Activities</button>
           </NavLink>
           <button onClick={handleLogout}>Logout</button>
         </div>

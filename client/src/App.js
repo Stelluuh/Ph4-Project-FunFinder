@@ -6,9 +6,13 @@ import Signup from './Signup';
 import Login from './Login';
 import Navbar from './Navbar';
 import Schedules from './Schedules';
+import Activities from './Activities';
 import './App.css';
 
 function App() {
+
+
+
   return (
     <div className="App">
       <UserProvider>
@@ -18,6 +22,7 @@ function App() {
           <Route path="/signup" element={<Signup />} />
           <Route path="/login" element={<Login />} />
           <Route path="/schedules" element={<Schedules />} />
+          <Route path="/activities" element={<Activities />} />
         </Routes>
       </UserProvider>
     </div>

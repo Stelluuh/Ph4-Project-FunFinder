@@ -7,23 +7,50 @@ const UserContext = React.createContext();
 //This component will be used to wrap the entire application and provides the context to all the components
 const UserProvider = ({ children }) => {
   const [user, setUser] = useState({})
+  const [activties, setActivities] = useState([])
   const [isLoggedIn, setIsLoggedIn] = useState(false)
   
   const navigate = useNavigate()
   
-    useEffect(() => {
-        fetch('/me') 
-            .then(response => response.json()) // we are getting the response back from the server and converting it to json
-            .then(data => {
+    // useEffect(() => {
+    //     fetch('/me') 
+    //         .then(response => response.json()) // we are getting the response back from the server and converting it to json
+    //         .then(data => {
                 
-                setUser(data) // setting the user state to the data we get back from the server
-                if (data.errors) { // if the data has an error property, set isLoggedIn to false, otherwise set it to true
-                  setIsLoggedIn(false)
-                } else {
-                  setIsLoggedIn(true)
-                }
-            })
-    }, [])
+    //             setUser(data) // setting the user state to the data we get back from the server
+    //             if (data.errors) { // if the data has an error property, set isLoggedIn to false, otherwise set it to true
+    //               setIsLoggedIn(false)
+    //             } else {
+    //               setIsLoggedIn(true)
+    //             }
+    //         })
+    // }, [])
+
+    const checkLogin = () => {
+      fetch('/me')
+        .then(response => response.json())
+        .then(data => {
+          setUser(data);
+          setIsLoggedIn(!data.errors);
+        })
+        .catch(error => console.error(error));
+    };
+  
+    useEffect(() => {
+      checkLogin();
+    }, []);
+
+    const addActivities = (activity) => {
+      fetch('/activities', {
+        method: 'POST',
+        headers: {'Content-Type' : 'application/json'},
+        body: JSON.stringify(activity)
+      })
+      .then(response => response.json())
+      .then(newActivity => {
+        setUser({...user, activities: [...user.activities, newActivity]})
+      })
+    }
 
     const addSchedule = (schedule) => { // schedule is the data we get back from the server from a form submission.
       fetch('/schedules', {
@@ -72,7 +99,8 @@ const UserProvider = ({ children }) => {
         logout, 
         isLoggedIn, 
         addSchedule,
-        deleteSchedule
+        deleteSchedule,
+        checkLogin
        }}> 
       {children}
     </UserContext.Provider>
