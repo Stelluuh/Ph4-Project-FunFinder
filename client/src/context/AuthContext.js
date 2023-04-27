@@ -8,7 +8,7 @@ const UserContext = React.createContext();
 const UserProvider = ({ children }) => {
   const [user, setUser] = useState({})
   const [isLoggedIn, setIsLoggedIn] = useState(false)
-  const [schedules, setSchedules] = useState([])
+  // const [schedules, setSchedules] = useState([])
   
   const navigate = useNavigate()
   
@@ -22,35 +22,27 @@ const UserProvider = ({ children }) => {
                   setIsLoggedIn(false)
                 } else {
                   setIsLoggedIn(true)
-                  getSchedules()
+                  // getSchedules()
                 }
-                  
-                // data.errors ? setIsLoggedIn(false) : setIsLoggedIn(true) 
             })
     }, [])
 
-    const getSchedules = () => {
-      fetch('/schedules')
-        .then(response => response.json())
-        .then(data => {
-          console.log('from AuthContext: ', data)
-          setSchedules(data)
-        })
-    }
+    // const getSchedules = () => {
+    //   fetch('/schedules')
+    //     .then(response => response.json())
+    //     .then(data => {
+    //       // console.log('from AuthContext: ', data)
+    //       setSchedules(data)
+    //     })
+    // }
 
     const addSchedule = (schedule) => { // schedule is the data we get back from the server from a form submission.
-      fetch ('/schedules', {
-        method: 'POST', 
-        headers: {'Content-Type' : 'application/json'},
-        body: JSON.stringify(schedule) // we are converting the schedule object to a string
-      })
-      .then(response => response.json())
-      .then(data => {
-        setSchedules([...schedules, data]) // we are adding the new schedule to an existing array of schedules
-      })
+      const updatedUser = {...user, schedules: [...user.schedules, schedule]} // we are creating a new user object with the new schedule added to the schedules array
+      setUser(updatedUser) // we are setting the user state to the updatedUser object
+    
     }
 
-    // console.log(user)
+    console.log('User Data: ', user)
 
    const signup = (user) => {
       setUser(user) // setting the user state to the data we get back from the server
@@ -77,8 +69,8 @@ const UserProvider = ({ children }) => {
         login, 
         logout, 
         isLoggedIn, 
-        schedules, 
-        addSchedule }}> 
+        addSchedule
+       }}> 
       {children}
     </UserContext.Provider>
   )
