@@ -78,9 +78,6 @@ const UserProvider = ({ children }) => {
       .then(setUser({...user, schedules: [...user.schedules.filter(schedule => schedule.id !== id)]} ))
     }
 
-    // console.log('User Data: ', user)
-    // console.log('isLoggedIn: ', isLoggedIn)
-
    const signup = (user) => {
       setUser(user) // setting the user state to the data we get back from the server
       setIsLoggedIn(true) // setting isLoggedIn to true

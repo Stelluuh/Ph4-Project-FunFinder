@@ -2,9 +2,6 @@ import React, { useContext } from 'react'
 import { UserContext } from './context/AuthContext';
 
 
-// This is the home page that will be displayed when the user is logged in
-
-
 const Home = () => {
 
   const { user, isLoggedIn } = useContext(UserContext)
@@ -25,12 +22,5 @@ const Home = () => {
       )
     }
 }
-  
-//   return (
-//     <div>
-//       <h1>Welcome to FunFinder Homepage</h1>
-//     </div>
-//   )
-// }
 
 export default Home
