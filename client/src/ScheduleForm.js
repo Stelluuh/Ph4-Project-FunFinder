@@ -4,7 +4,7 @@ import { UserContext } from './context/AuthContext';
 const ScheduleForm = () => {
     const [timeOfDay, setTimeOfDay] = useState('')
 
-    const {addSchedule} = useContext(UserContext)
+    const {addSchedule, allActivities} = useContext(UserContext)
 
     const handleSubmit = (e) => {
         e.preventDefault()
@@ -14,6 +14,10 @@ const ScheduleForm = () => {
         console.log(timeOfDay)
     }
     // console.log('time of day: ', timeOfDay  )
+
+    const activityOptions = allActivities.map(activity => {
+        return <option key={activity.id} value={activity.id}>{activity.name}</option>
+    })
 
     return(
         <div>
@@ -29,6 +33,11 @@ const ScheduleForm = () => {
                         // console.log(e.target.value)
                     }}
                 />
+                <select>
+                    <option value="">Select an Activity</option>
+                    {activityOptions}
+                </select>
+
                 <input type="submit" value="Add Schedule"/>
             </form>
         </div>
