@@ -10,14 +10,15 @@ class SchedulesController < ApplicationController
     end
 
     # def index
-    #     activity = Activity.find(params[:activity_id])
+    #     activity = Activity.find_by(id: params[:activity_id])
     #     schedule = activity.schedule
     #     render json: schedule, include: :activity
     # end
 
     def show
-        schedule = current_user.schedules.find_by(id: params[:id])
-        render json: schedule
+        # schedule = current_user.schedules.find_by(id: params[:id])
+        # render json: schedule
+        render json: @schedule
     end
 
     def create

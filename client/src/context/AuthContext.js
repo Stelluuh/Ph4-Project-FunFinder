@@ -10,7 +10,6 @@ const UserProvider = ({ children }) => {
   // const [activties, setActivities] = useState([])
   const [allActivities, setAllActivities] = useState([])
   const [isLoggedIn, setIsLoggedIn] = useState(false)
-  const [errors, setErrors] = useState('')
   
   const navigate = useNavigate()
   
@@ -48,17 +47,17 @@ const UserProvider = ({ children }) => {
       .then(data => setAllActivities(data))
     }, [isLoggedIn])
 
-    const addActivities = (activity) => {
-      fetch('/activities', {
-        method: 'POST',
-        headers: {'Content-Type' : 'application/json'},
-        body: JSON.stringify(activity)
-      })
-      .then(response => response.json())
-      .then(newActivity => {
-        setUser({...user, activities: [...user.activities, newActivity]})
-      })
-    }
+    // const addActivities = (activity) => {
+    //   fetch('/activities', {
+    //     method: 'POST',
+    //     headers: {'Content-Type' : 'application/json'},
+    //     body: JSON.stringify(activity)
+    //   })
+    //   .then(response => response.json())
+    //   .then(newActivity => {
+    //     setUser({...user, activities: [...user.activities, newActivity]})
+    //   })
+    // }
 
     const addSchedule = (schedule) => { // schedule is the data we get back from the server from a form submission.
       fetch('/schedules', {

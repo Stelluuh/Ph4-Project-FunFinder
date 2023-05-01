@@ -1,5 +1,5 @@
 class ActivitySerializer < ActiveModel::Serializer
-  attributes :name, :description, :childs_age, :duration, :summary
+  attributes  :name, :description, :childs_age, :duration, :summary, :id
 
     has_many :schedules
     has_many :users, through: :schedules

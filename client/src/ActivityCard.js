@@ -2,9 +2,9 @@ import React, { useContext } from 'react'
 import { UserContext } from './context/AuthContext'
 
 const ActivityCard = ({activity}) => {
-  const { deleteActivity, isLoggedIn } = useContext(UserContext)
+  const { isLoggedIn } = useContext(UserContext)
   // console.log({activity})
-  const {name, childs_age, description, duration, id} = activity
+  const {name, childs_age, description, duration} = activity
 
   if (!isLoggedIn) {
   return (

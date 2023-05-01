@@ -24,11 +24,14 @@ const Navbar = () => {
       return (
         <div>
           <h3>Hello {user.name}</h3>
+          <NavLink to="/">
+              <button>Home</button>
+          </NavLink>
           <NavLink to="/schedules">
               <button>My Daily schedule</button>
           </NavLink>
           <NavLink to="/activities">
-              <button>View Activities</button>
+              <button>Browse Activities</button>
           </NavLink>
           <button onClick={handleLogout}>Logout</button>
         </div>
