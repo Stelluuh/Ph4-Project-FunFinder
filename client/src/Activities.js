@@ -5,7 +5,7 @@ import ActivityCard from './ActivityCard'
 
 const Activities = () => {
   const { user, isLoggedIn, checkLogin } = useContext(UserContext)
-  const [allActivities, setAllActivities] = useState([])
+  const [allActivities, setAllActivities] = useState([]) // all activities of all users
 
   // useEffect(() => {
   //   if (isLoggedIn) {
