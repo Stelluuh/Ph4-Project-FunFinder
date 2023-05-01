@@ -7,7 +7,8 @@ const UserContext = React.createContext();
 //This component will be used to wrap the entire application and provides the context to all the components
 const UserProvider = ({ children }) => {
   const [user, setUser] = useState({})
-  const [activties, setActivities] = useState([])
+  // const [activties, setActivities] = useState([])
+  const [allActivities, setAllActivities] = useState([])
   const [isLoggedIn, setIsLoggedIn] = useState(false)
   const [errors, setErrors] = useState('')
   
@@ -34,12 +35,18 @@ const UserProvider = ({ children }) => {
           setUser(data);
           setIsLoggedIn(!data.errors);
         })
-        .catch(error => console.error(error));
+        // .catch(error => console.error(error));
     };
   
     useEffect(() => {
       checkLogin();
     }, []);
+
+    useEffect(() => {
+      fetch('/activities')
+      .then(response => response.json())
+      .then(data => setAllActivities(data))
+    }, [isLoggedIn])
 
     const addActivities = (activity) => {
       fetch('/activities', {
@@ -102,7 +109,8 @@ const UserProvider = ({ children }) => {
         isLoggedIn, 
         addSchedule,
         deleteSchedule,
-        checkLogin
+        checkLogin,
+        allActivities
        }}> 
       {children}
     </UserContext.Provider>

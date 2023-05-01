@@ -1,11 +1,11 @@
-import React, { useContext, useState, useEffect } from 'react'
+import React, { useContext, useEffect } from 'react'
 import { UserContext } from './context/AuthContext'
 import ActivityCard from './ActivityCard'
 
 
 const Activities = () => {
-  const { user, isLoggedIn, checkLogin } = useContext(UserContext)
-  const [allActivities, setAllActivities] = useState([]) // all activities of all users
+  const { isLoggedIn, checkLogin, allActivities } = useContext(UserContext)
+  // const [allActivities, setAllActivities] = useState([]) // all activities of all users
 
   // useEffect(() => {
   //   if (isLoggedIn) {
@@ -20,11 +20,11 @@ const Activities = () => {
   }, [])
 
   //All activities of all users.
-  useEffect(() => {
-    fetch('/activities')
-    .then(response => response.json())
-    .then(data => setAllActivities(data))
-  }, [isLoggedIn])
+  // useEffect(() => {
+  //   fetch('/activities')
+  //   .then(response => response.json())
+  //   .then(data => setAllActivities(data))
+  // }, [isLoggedIn])
 
 
   const renderAllActivities = allActivities.map(activity => {
