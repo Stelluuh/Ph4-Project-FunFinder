@@ -9,6 +9,7 @@ const UserProvider = ({ children }) => {
   const [user, setUser] = useState({})
   const [activties, setActivities] = useState([])
   const [isLoggedIn, setIsLoggedIn] = useState(false)
+  const [errors, setErrors] = useState('')
   
   const navigate = useNavigate()
   
@@ -72,7 +73,7 @@ const UserProvider = ({ children }) => {
     }
 
     // console.log('User Data: ', user)
-    console.log('isLoggedIn: ', isLoggedIn)
+    // console.log('isLoggedIn: ', isLoggedIn)
 
    const signup = (user) => {
       setUser(user) // setting the user state to the data we get back from the server

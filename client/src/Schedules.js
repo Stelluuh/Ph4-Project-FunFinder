@@ -7,7 +7,7 @@ import ScheduleForm from './ScheduleForm'
 const Schedules = () => {
   const { user, isLoggedIn, checkLogin } = useContext(UserContext)
   
-  useEffect(() => {
+  useEffect(() => { // useEffect is a hook that allows us to perform side effects (execut outside normal flow in rendering process). It runs after the component renders for the first time.
     checkLogin() // Call the checkLogin function when the component mounts
   }, [])
 
