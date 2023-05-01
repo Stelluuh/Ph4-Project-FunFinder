@@ -9,6 +9,12 @@ class SchedulesController < ApplicationController
         render json: schedules
     end
 
+    # def index
+    #     activity = Activity.find(params[:activity_id])
+    #     schedule = activity.schedule
+    #     render json: schedule, include: :activity
+    # end
+
     def show
         schedule = current_user.schedules.find_by(id: params[:id])
         render json: schedule
