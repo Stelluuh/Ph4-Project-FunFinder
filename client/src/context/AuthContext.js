@@ -66,6 +66,7 @@ const UserProvider = ({ children }) => {
       })
       .then(response => response.json())
       .then(newActivity => {
+        console.log(newActivity)
         setAllActivities([...allActivities, newActivity])
       })
     }

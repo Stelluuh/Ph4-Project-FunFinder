@@ -17,8 +17,6 @@ const Schedules = () => {
     return <ScheduleCard key={schedule.id} schedule={schedule} activities={allActivities} />
   })
 
-  
-
   return (
     <div>
       {isLoggedIn ? (
@@ -33,6 +31,9 @@ const Schedules = () => {
     </div>
   )
 }
+
+export default Schedules
+
 
 // const Schedules = () => {
 //   const { user, isLoggedIn } = useContext(UserContext)
@@ -60,7 +61,3 @@ const Schedules = () => {
   
 
 // }
-
-
-
-export default Schedules
