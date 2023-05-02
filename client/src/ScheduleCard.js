@@ -17,7 +17,7 @@ const ScheduleCard = ({ schedule, activities }) => {
         }
     })
 
-    console.log(userActivities)
+    // console.log(userActivities)
 
     if (!isLoggedIn) {
         return (

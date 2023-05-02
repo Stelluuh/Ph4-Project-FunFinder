@@ -7,7 +7,6 @@ const UserContext = React.createContext();
 //This component will be used to wrap the entire application and provides the context to all the components
 const UserProvider = ({ children }) => {
   const [user, setUser] = useState({})
-  // const [activties, setActivities] = useState([])
   const [allActivities, setAllActivities] = useState([])
   const [isLoggedIn, setIsLoggedIn] = useState(false)
   
@@ -67,6 +66,7 @@ const UserProvider = ({ children }) => {
       })
       .then(response => response.json())
       .then(newSchedule => {
+        console.log(newSchedule)
         setUser({ ...user, schedules: [...user.schedules, newSchedule]})
       })    
     }

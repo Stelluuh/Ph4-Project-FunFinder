@@ -5,17 +5,17 @@ const ScheduleForm = () => {
     const [timeOfDay, setTimeOfDay] = useState('')
     const [activityId, setActivityId] = useState('')
 
-    const {addSchedule, allActivities, addActivities} = useContext(UserContext)
+    const {addSchedule, allActivities} = useContext(UserContext)
 
     const handleSubmit = (e) => {
         e.preventDefault()
         addSchedule({ // we are passing the schedule object to the addSchedule function in AuthContext.js
             time_of_day: timeOfDay,// this comes from state
-            activtiy_id: activityId
+            activity_id: activityId
         })
-
-        setTimeOfDay('') // reset the form
-   
+        // reset the form
+        setTimeOfDay('') 
+        setActivityId('')
     }
     // console.log('time of day: ', timeOfDay  )
 
@@ -37,12 +37,8 @@ const ScheduleForm = () => {
                         // console.log(e.target.value)
                     }}
                 />
-                <select>
-                    <option 
-                        value="{activityId}"
-                        onChange = {(e) => {setActivityId(e.target.value)}}
-                    >Select an Activity
-                    </option>
+                <select value={activityId} onChange={(e) => setActivityId(e.target.value)}>
+                    <option value="">Select an Activity</option>
                     {activityOptions}
                 </select>
 
