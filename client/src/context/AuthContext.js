@@ -58,6 +58,18 @@ const UserProvider = ({ children }) => {
     //   })
     // }
 
+    const addActivity = (activity) => {
+      fetch('/activities', {
+        method: 'POST',
+        headers: {'Content-Type' : 'application/json'},
+        body: JSON.stringify(activity)
+      })
+      .then(response => response.json())
+      .then(newActivity => {
+        setAllActivities([...allActivities, newActivity])
+      })
+    }
+
     const addSchedule = (schedule) => { // schedule is the data we get back from the server from a form submission.
       fetch('/schedules', {
         method: 'POST', 
@@ -66,9 +78,20 @@ const UserProvider = ({ children }) => {
       })
       .then(response => response.json())
       .then(newSchedule => {
-        console.log(newSchedule)
         setUser({ ...user, schedules: [...user.schedules, newSchedule]})
       })    
+    }
+
+    const updateSchedule = (schedule) => {
+      fetch('/schedules/', {
+        method: 'PATCH',
+        headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify(schedule)
+      })
+      .then(response => response.json())
+      .then(updatedSchedule => {
+        setUser({...user, schedules: [...user.schedules, updatedSchedule]})
+      })
     }
 
     const deleteSchedule = (id) => {
@@ -106,7 +129,8 @@ const UserProvider = ({ children }) => {
         addSchedule,
         deleteSchedule,
         checkLogin,
-        allActivities
+        allActivities,
+        addActivity
        }}> 
       {children}
     </UserContext.Provider>

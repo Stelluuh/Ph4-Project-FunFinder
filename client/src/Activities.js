@@ -1,31 +1,15 @@
 import React, { useContext, useEffect } from 'react'
 import { UserContext } from './context/AuthContext'
 import ActivityCard from './ActivityCard'
+import ActivityForm from './ActivityForm'
 
 
 const Activities = () => {
   const { isLoggedIn, checkLogin, allActivities } = useContext(UserContext)
-  // const [allActivities, setAllActivities] = useState([]) // all activities of all users
-
-  // useEffect(() => {
-  //   if (isLoggedIn) {
-  //     fetch('/activities')
-  //     .then(res => res.json())
-  //     .then(data => console.log(data))
-  //   }
-  // }, [user])
 
   useEffect(() => {
     checkLogin()
   }, [])
-
-  //All activities of all users.
-  // useEffect(() => {
-  //   fetch('/activities')
-  //   .then(response => response.json())
-  //   .then(data => setAllActivities(data))
-  // }, [isLoggedIn])
-
 
   const renderAllActivities = allActivities.map(activity => {
     return <ActivityCard key={activity.id} activity={activity}/>
@@ -40,15 +24,14 @@ const Activities = () => {
   // )
 
 
-
   return (
     <div>
       {isLoggedIn ? (
         <>
-           <h1>Activities List</h1>
-           {/* {userActivities} */}
-           {renderAllActivities}
-
+          <h1>Activities List</h1>
+          {renderAllActivities}
+          <ActivityForm />
+          
         </>
       ) : (
         <h3>Please Login or Signup</h3>
