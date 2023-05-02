@@ -3,7 +3,7 @@ import { UserContext } from './context/AuthContext'
 import './styles/ScheduleCard.css' 
 
 const ScheduleCard = ({ schedule, activities }) => {
-    const { deleteSchedule, isLoggedIn, checkLogin } = useContext(UserContext)
+    const { deleteSchedule, updateSchedule, isLoggedIn, checkLogin } = useContext(UserContext)
 
     useEffect(() => {
         checkLogin()
@@ -32,6 +32,8 @@ const ScheduleCard = ({ schedule, activities }) => {
                 <p>Time of day: {schedule.time_of_day}</p>
                 {userActivities}
                 <button onClick={() => deleteSchedule(schedule.id)}>Complete</button>
+                <button onClick={() => updateSchedule(schedule.id)}>Edit</button>
+                
             </div>
         </div>
       )
