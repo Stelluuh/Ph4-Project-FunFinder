@@ -46,18 +46,6 @@ const UserProvider = ({ children }) => {
       .then(data => setAllActivities(data))
     }, [isLoggedIn])
 
-    // const addActivities = (activity) => {
-    //   fetch('/activities', {
-    //     method: 'POST',
-    //     headers: {'Content-Type' : 'application/json'},
-    //     body: JSON.stringify(activity)
-    //   })
-    //   .then(response => response.json())
-    //   .then(newActivity => {
-    //     setUser({...user, activities: [...user.activities, newActivity]})
-    //   })
-    // }
-
     const addActivity = (activity) => {
       fetch('/activities', {
         method: 'POST',
@@ -83,15 +71,21 @@ const UserProvider = ({ children }) => {
       })    
     }
 
-    const updateSchedule = (schedule) => {
-      fetch('/schedules/', {
+    const updateSchedule = (updatedSchedule) => {
+      fetch(`/schedules/${updatedSchedule.id}`, {
         method: 'PATCH',
         headers: {'Content-Type': 'application/json'},
-        body: JSON.stringify(schedule)
+        body: JSON.stringify(updatedSchedule)
       })
       .then(response => response.json())
-      .then(updatedSchedule => {
-        setUser({...user, schedules: [...user.schedules, updatedSchedule]})
+      .then(updatedScheduleData => {
+        setUser({...user, schedules: user.schedules.map(schedule => {
+          if (schedule.id === updatedScheduleData.id) {
+            return updatedScheduleData;
+          } else {
+            return schedule;
+          }
+        })})
       })
     }
 
@@ -131,7 +125,8 @@ const UserProvider = ({ children }) => {
         deleteSchedule,
         checkLogin,
         allActivities,
-        addActivity
+        addActivity,
+        updateSchedule
        }}> 
       {children}
     </UserContext.Provider>
