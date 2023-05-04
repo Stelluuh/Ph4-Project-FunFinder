@@ -1,6 +1,6 @@
 class ScheduleSerializer < ActiveModel::Serializer
-  attributes :id, :time_of_day
-  attributes :id, :time_of_day, :user_id, :activity_id
+  attributes :id, :time_of_day, :user_id, :activity_id, :activity
   has_one :user
-  has_many :activities
+  has_one :activity
 end
+
