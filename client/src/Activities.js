@@ -30,9 +30,9 @@ const Activities = () => {
       {isLoggedIn ? (
         <>
           <h1>Activities List</h1>
+            <ActivityForm />
           <div className="activity-cards">
             {renderAllActivities}
-            <ActivityForm />
           </div>
   
         </>
