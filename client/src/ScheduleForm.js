@@ -6,7 +6,7 @@ const ScheduleForm = () => {
     const [timeOfDay, setTimeOfDay] = useState('')
     const [activityId, setActivityId] = useState('')
 
-    const {addSchedule, allActivities} = useContext(UserContext)
+    const {addSchedule, allActivities, errors} = useContext(UserContext)
 
     const handleSubmit = (e) => {
         e.preventDefault()
@@ -45,6 +45,7 @@ const ScheduleForm = () => {
 
                 <input type="submit" value="Add Schedule"/>
             </form>
+            {errors && errors.map(error => <ul key={error}>{error}</ul>)} 
         </div>
     )
 }

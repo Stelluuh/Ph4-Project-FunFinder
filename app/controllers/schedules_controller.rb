@@ -1,23 +1,12 @@
 class SchedulesController < ApplicationController
     # I need to set up full CRUD in a way to ensure that any scheduleds created by a user are associeted with their account only.
 
-
-    # before_action: :set_schedule, only: [:show, :update, :destroy] # we call set_schedule to find the schedule that the user is trying to perform an action on
-
     def index
         schedules = current_user.schedules
         render json: schedules
     end
 
-    # def index
-    #     activity = Activity.find_by(id: params[:activity_id])
-    #     schedule = activity.schedule
-    #     render json: schedule, include: :activity
-    # end
-
     def show
-        # schedule = current_user.schedules.find_by(id: params[:id])
-        # render json: schedule
         render json: @schedule
     end
 

@@ -9,6 +9,7 @@ const UserProvider = ({ children }) => {
   const [user, setUser] = useState({})
   const [allActivities, setAllActivities] = useState([])
   const [isLoggedIn, setIsLoggedIn] = useState(false)
+  const [errors, setErrors] = useState([])
   
   const navigate = useNavigate()
   
@@ -30,10 +31,15 @@ const UserProvider = ({ children }) => {
       fetch('/me')
         .then(response => response.json())
         .then(data => {
+          if (data.errors) {
+            setIsLoggedIn(false)
+            setErrors(data.errors)
+          } else
           setUser(data);
           setIsLoggedIn(!data.errors);
+
         })
-        // .catch(error => console.error(error));
+        .catch(error => console.error(error));
     };
   
     useEffect(() => {
@@ -67,7 +73,12 @@ const UserProvider = ({ children }) => {
       })
       .then(response => response.json())
       .then(newSchedule => {
+        if (!newSchedule.errors) {
         setUser({ ...user, schedules: [...user.schedules, newSchedule]})
+        } else {
+          const errorLi= newSchedule.errors.map(error => <li key={error}>{error}</li>)
+          setErrors(errorLi)
+        }
       })    
     }
 
@@ -121,6 +132,8 @@ const UserProvider = ({ children }) => {
         login, 
         logout, 
         isLoggedIn, 
+        errors,
+        setErrors,
         addSchedule,
         deleteSchedule,
         checkLogin,
