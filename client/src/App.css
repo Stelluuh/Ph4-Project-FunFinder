@@ -54,10 +54,10 @@ button {
   transition: background-color 0.3s ease-in-out;
 }
 
-/* Primary button */
 button.primary {
   background-color: #ff6b6b;
   color: #fff;
+  margin: 10px;
 }
 
 button.primary:hover {
@@ -68,6 +68,7 @@ button.primary:hover {
 button.secondary {
   background-color: #f2f2f2;
   color: #555;
+  margin: 10px;
 }
 
 button.secondary:hover {
