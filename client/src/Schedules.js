@@ -22,8 +22,8 @@ const Schedules = () => {
       {isLoggedIn ? (
         <>
           <h3>My Schedule</h3> 
-          {scheduleList}     
           <ScheduleForm activities={allActivities}/>
+          {scheduleList}     
         </>
       ) : (
         <h3>Please Login or Signup</h3>

@@ -46,6 +46,7 @@ const ScheduleForm = () => {
                 <input type="submit" value="Add Schedule"/>
             </form>
             {errors && errors.map(error => <ul key={error}>{error}</ul>)} 
+            {/* it will only render if the condition before && is true. If there are no errors, it will not render. */}
         </div>
     )
 }
