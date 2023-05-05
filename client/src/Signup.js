@@ -76,17 +76,16 @@ const Signup = () => {
             />
             <input
                 type='password'
-                placeholder="passwordConfirmation"
+                placeholder="Confirm Password"
                 id="passwordConfirmation"
                 value={passwordConfirmation}
                 onChange={(e) => setPasswordConfirmation(e.target.value)}
             />
             <input type='submit'/>
         </form>
-        <hr/>
-        <li>
+        <ul>
             {errorsList}
-        </li>
+        </ul>
         
     </div>
   )

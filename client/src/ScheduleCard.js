@@ -7,6 +7,7 @@ const ScheduleCard = ({ schedule, activities }) => {
     const [editing, setEditing] = useState(false)
     const [timeOfDay, setTimeOfDay] = useState(schedule.time_of_day)
     const [activityId, setActivityId]= useState(schedule.activity.id)
+    const [showDetails, setShowDetails] = useState(false)
     
 
     useEffect(() => {
@@ -41,15 +42,15 @@ const ScheduleCard = ({ schedule, activities }) => {
 
     // console.log(userActivities)
 
-    if (!isLoggedIn) {
+    if (!isLoggedIn) { //if the user is not logged in, they will see this message
         return (
-          <div>
+          <div className="schedule-card">
             <h3>Please Login or Signup</h3>
           </div>
         );
-      } else if (editing) {
+      } else if (editing) { //if the user is logged in and editing is true, they will see this form
         return (
-          <form className="time-container" onSubmit={handleSubmit}>
+          <form className="schedule-card" onSubmit={handleSubmit}>
             <label>
               Time of day:
               <input
@@ -77,16 +78,25 @@ const ScheduleCard = ({ schedule, activities }) => {
             </button>
           </form>
         );
-      } else {
+      } else { //if the user is logged in and editing is false, they will see this
         return (
-          <div>
-            <div className="time-container">
+          <div className="schedule-card">
+            <div className="schedule-card">
               <p>Time of day: {schedule.time_of_day}</p>
               <p>Activity: {schedule.activity.name}</p>
-              {/* {userActivities} */}
               <button onClick={() => deleteSchedule(schedule.id)}>Complete</button>
               <button onClick={() => setEditing(true)}>Edit</button>
+              <button onClick={() => setShowDetails(!showDetails)}>
+                {showDetails ? 'Hide Details' : 'Show Details'}
+              </button>
             </div>
+            {showDetails && ( //if showDetails is true, then show the details
+              <div className="schedule-card">
+                <p>Child's age: {schedule.activity.childs_age}</p>
+                <p>Description: {schedule.activity.description}</p>
+                <p>Duration: {schedule.activity.duration}</p>
+              </div>
+            )}
           </div>
         );
       }

@@ -25,25 +25,25 @@ const Navbar = () => {
         <div>
           <h3>Hello {user.name}</h3>
           <NavLink to="/">
-              <button>Home</button>
+              <button class="secondary">Home</button>
           </NavLink>
           <NavLink to="/schedules">
-              <button>My Daily schedule</button>
+              <button class="secondary">My Daily schedule</button>
           </NavLink>
           <NavLink to="/activities">
-              <button>Browse Activities</button>
+              <button class="secondary">Browse Activities</button>
           </NavLink>
-          <button onClick={handleLogout}>Logout</button>
+          <button class="secondary" onClick={handleLogout}>Logout</button>
         </div>
       )
     } else {
       return(
         <div>
           <NavLink to="/login">
-              <button>Login</button>
+              <button class="secondary">Login</button>
           </NavLink>
           <NavLink to="/signup">
-              <button>Signup</button>
+              <button class="secondary">Signup</button>
           </NavLink>
         </div>
       )

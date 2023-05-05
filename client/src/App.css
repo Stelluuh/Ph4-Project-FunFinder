@@ -2,6 +2,12 @@
   text-align: center;
 }
 
+body {
+  background-color: #FCE3E6; /* light pink background */
+}
+
+
+
 .App-logo {
   height: 40vmin;
   pointer-events: none;
@@ -36,3 +42,35 @@
     transform: rotate(360deg);
   }
 }
+
+
+/* General button styles */
+button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+}
+
+/* Primary button */
+button.primary {
+  background-color: #ff6b6b;
+  color: #fff;
+}
+
+button.primary:hover {
+  background-color: #f73859;
+}
+
+/* Secondary button */
+button.secondary {
+  background-color: #f2f2f2;
+  color: #555;
+}
+
+button.secondary:hover {
+  background-color: #ddd;
+}
+

@@ -1,5 +1,6 @@
 import React, { useState, useContext } from 'react'
 import { UserContext } from './context/AuthContext';
+import './styles/forms.css'
 
 const ScheduleForm = () => {
     const [timeOfDay, setTimeOfDay] = useState('')
