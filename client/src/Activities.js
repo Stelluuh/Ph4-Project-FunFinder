@@ -2,6 +2,7 @@ import React, { useContext, useEffect } from 'react'
 import { UserContext } from './context/AuthContext'
 import ActivityCard from './ActivityCard'
 import ActivityForm from './ActivityForm'
+import './styles/Activities.css'
 
 
 const Activities = () => {
@@ -25,13 +26,15 @@ const Activities = () => {
 
 
   return (
-    <div>
+    <div className="activities-container">
       {isLoggedIn ? (
         <>
           <h1>Activities List</h1>
-          {renderAllActivities}
-          <ActivityForm />
-          
+          <div className="activity-cards">
+            {renderAllActivities}
+            <ActivityForm />
+          </div>
+  
         </>
       ) : (
         <h3>Please Login or Signup</h3>

@@ -1,5 +1,6 @@
 import React, { useContext } from 'react'
 import { UserContext } from './context/AuthContext'
+import './styles/ActivityCard.css'
 
 const ActivityCard = ({activity}) => {
   const { isLoggedIn } = useContext(UserContext)
