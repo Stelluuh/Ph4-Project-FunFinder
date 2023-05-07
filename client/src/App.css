@@ -5,6 +5,11 @@
 body {
   background-color: #00B8BE; /* light pink background */
   /* background-color: #FCE3E6;  */
+  /* background-image: url('./styles/Images/Art\ Class.png'), url('./styles/Images/Building\ Blue.png'), url('./styles/Images/Coloring.png'), url('./styles/Images/Soccer\ Blue.png'), url('./styles/Images/Swimming.png'), url('./styles/Images/Watercolor.png');
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover; */
 }
 
 
