@@ -10,7 +10,7 @@
     margin: 0 auto;
     }
     
-    .activity-card {
+    .activity-card { 
     background-color: #FFF9DE;
     border-radius: 5px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -29,7 +29,7 @@
     
     .activity-card p {
     font-size: 16px;
-    margin-bottom: 20px;
+    margin-bottom: 8px;
     }
     
     .activity-card button {

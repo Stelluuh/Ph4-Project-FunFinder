@@ -20,5 +20,4 @@ user2=User.create(name: "Jane Doe", username: "janedoe", password: "password", p
 schedule1=Schedule.create(time_of_day: "Morning", user_id: user1.id, activity_id: activity1.id)
 schedule2=Schedule.create(time_of_day: "Afternoon", user_id: user1.id, activity_id: activity2.id)
 schedule3=Schedule.create(time_of_day: "Evening", user_id: user2.id, activity_id: activity3.id)
-byebug
 puts 'Seeded database!'
