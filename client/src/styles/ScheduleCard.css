@@ -84,20 +84,20 @@
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
   padding: 20px;
   margin-bottom: 20px;
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Montserrat', sans-serif;
 }
 
 .schedule-card h3 {
   font-size: 36px;
   margin-bottom: 10px;
-  font-family: 'Fredoka One', cursive;
+  font-family: 'Montserrat', sans-serif;
 }
 
 .schedule-card form label {
   display: block;
   margin-bottom: 10px;
   font-size: 18px;
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Montserrat', sans-serif;
 }
 
 .schedule-card form input[type="text"],
@@ -108,7 +108,7 @@
   border-radius: 5px;
   width: 100%;
   margin-bottom: 10px;
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Montserrat', sans-serif;
 }
 
 .schedule-card form button[type="submit"],
@@ -121,7 +121,7 @@
   font-size: 18px;
   cursor: pointer;
   margin-right: 10px;
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Montserrat', sans-serif;
 }
 
 .schedule-card form button[type="submit"]:hover,
@@ -132,7 +132,7 @@
 .schedule-card p {
   font-size: 18px;
   margin-bottom: 10px;
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Montserrat', sans-serif;
 }
 
 .schedule-card button {
@@ -144,7 +144,7 @@
   font-size: 18px;
   cursor: pointer;
   margin-right: 10px;
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Montserrat', sans-serif;
 }
 
 .schedule-card button:hover {
@@ -157,5 +157,5 @@
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
   padding: 20px;
   margin-top: 20px;
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Montserrat', sans-serif;
 }

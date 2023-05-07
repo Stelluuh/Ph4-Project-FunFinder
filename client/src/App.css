@@ -3,7 +3,8 @@
 }
 
 body {
-  background-color: #FCE3E6; /* light pink background */
+  background-color: #00B8BE; /* light pink background */
+  /* background-color: #FCE3E6;  */
 }
 
 
@@ -67,13 +68,36 @@ button.primary:hover {
 
 /* Secondary button */
 button.secondary {
-  background-color: #f2f2f2;
+  background-color: #f37432;
   color: #555;
   margin: 10px;
 }
+/* button.secondary {
+  background-color: #f2f2f2;
+  color: #555;
+  margin: 10px;
+} */
 
 button.secondary:hover {
   background-color: #ddd;
+}
+
+/* Set font family for elements */
+body {
+  font-family: 'Montserrat', sans-serif;
+}
+
+/* Set font weight for specific elements */
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 800; /* Extra bold */
+}
+
+.button {
+  font-weight: 700; /* Bold */
+}
+
+p {
+  font-weight: 400; /* Regular */
 }
 
 
