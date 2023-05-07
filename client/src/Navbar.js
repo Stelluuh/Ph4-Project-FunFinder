@@ -23,7 +23,7 @@ const Navbar = () => {
     if(isLoggedIn) { // if the user is logged in, display the home page
       return (
         <div>
-          <h3>Hello {user.name}</h3>
+          {/* <h3>Hello {user.name}</h3> */}
           <NavLink to="/">
               <button class="secondary">Home</button>
           </NavLink>
