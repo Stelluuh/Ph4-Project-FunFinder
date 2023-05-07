@@ -18,10 +18,9 @@ const ActivityCard = ({activity}) => {
   return (
     <div className='activity-card'>
       <h3>{name}</h3>
-      <p>Child's Age: {childs_age}</p>
-      <p>Description: {description}</p>
-      <p>Duration: {duration} minutes</p>
-      {/* <button onClick={() => deleteActivity(id)}>x</button> */}
+      <p>age: {childs_age}</p>
+      <p>{description}</p>
+      <p>{duration} minutes</p>
     </div>
 
   )

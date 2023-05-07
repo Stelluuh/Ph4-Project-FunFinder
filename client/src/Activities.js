@@ -17,19 +17,13 @@ const Activities = () => {
   })
 
 
-  // //Activities that belong to user only
-  // const userActivities = user?.activities?.map(
-  //   activity => {
-  //     return <ActivityCard key={activity.id} activity={activity}/>
-  //   }
-  // )
-
-
+  
+  
   return (
     <div className="activities-container">
       {isLoggedIn ? (
         <>
-          <h1>Activities List</h1>
+          <h1>activities<span class="list">list</span></h1>
             <ActivityForm />
           <div className="activity-cards">
             {renderAllActivities}
@@ -38,9 +32,16 @@ const Activities = () => {
         </>
       ) : (
         <h3>Please Login or Signup</h3>
-      )}
+        )}
     </div>
   )
 }
 
 export default Activities
+
+// //Activities that belong to user only
+// const userActivities = user?.activities?.map(
+//   activity => {
+//     return <ActivityCard key={activity.id} activity={activity}/>
+//   }
+// )

@@ -12,8 +12,8 @@ const ActivityForm = () => {
     const handleSubmit = (e) => {
         e.preventDefault()
         addActivity({
-            name: name,
-            description: description,
+            name: name.toLowerCase(),
+            description: description.toLowerCase(),
             childs_age: childsAge,
             duration: duration
         })

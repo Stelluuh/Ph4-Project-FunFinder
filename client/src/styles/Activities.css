@@ -1,38 +1,61 @@
-.activities-header {
+   .activities-container {
+    font-family: 'Montserrat', sans-serif;
+    }
+    
+    .activity-cards {
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
-    align-items: center;
-    margin-bottom: 20px;
-  }
-  
-  .activities-header-container {
-    display: flex;
-    justify-content: center;
-  }
-  
-  .activity-cards {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-gap: 20px;
-    font-family: 'Poppins', sans-serif;
-  }
-  
-  .activity-card {
-    border: 1px solid gray;
+    max-width: 1200px;
+    margin: 0 auto;
+    }
+    
+    .activity-card {
+    background-color: #FFF9DE;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin: 10px;
     padding: 10px;
-    height: 0;
-    padding-bottom: 100%;
-    position: relative;
-    font-family: 'Poppins', sans-serif;
-  }
-  
-  .activity-card h2 {
-    font-size: 18px;
-    margin: 0;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    font-family: 'Poppins', sans-serif;
-  }
-  
+    width: calc(25% - 20px);
+    max-width: 650px;
+    text-align: center;
+    }
+    
+    .activity-card h2 {
+    font-size: 24px;
+    color: #0059AA;
+    margin-bottom: 10px;
+    }
+    
+    .activity-card p {
+    font-size: 16px;
+    margin-bottom: 20px;
+    }
+    
+    .activity-card button {
+    background-color: #f37432;
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    cursor: pointer;
+    font-size: 16px;
+    padding: 10px 20px;
+    transition: background-color 0.3s ease-in-out;
+    }
+    
+    .activity-card button:hover {
+    background-color: #f73859;
+    }
+    
+    .activity-card img {
+    max-width: 100%;
+    }
+
+    h1 {
+      color: #FFF9DE;
+    }
+
+    .list {
+      font-weight: 800;
+      color: #0059AA;
+    }

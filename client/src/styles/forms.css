@@ -1,3 +1,7 @@
+*{
+    box-sizing: border-box
+}
+
 form {
     max-width: 400px;
     margin: 50px auto;
@@ -38,11 +42,11 @@ form {
     border: none;
     border-radius: 5px;
     font-size: 16px;
-    /* background-color: #80489C; */
     background-color: #F37432;
     color: #fff;
     cursor: pointer;
     transition: background-color 0.3s ease-in-out;
+    font-family: 'Montserrat', sans-serif;
     }
     
     input[type="submit"]:hover {

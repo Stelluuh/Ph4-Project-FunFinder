@@ -53,23 +53,27 @@ button {
   font-size: 16px;
   cursor: pointer;
   transition: background-color 0.3s ease-in-out;
+  font-family: 'Montserrat', sans-serif;
 }
 
 /* Primary button */
 button.primary {
   background-color: #ff6b6b;
+  font-family: 'Montserrat', sans-serif;
   color: #fff;
   margin: 10px;
 }
 
 button.primary:hover {
   background-color: #f73859;
+  font-family: 'Montserrat', sans-serif;
 }
 
 /* Secondary button */
 button.secondary {
   background-color: #f37432;
-  color: #555;
+  font-family: 'Montserrat', sans-serif;
+  color: #FFF9DE;
   margin: 10px;
 }
 /* button.secondary {
@@ -80,6 +84,8 @@ button.secondary {
 
 button.secondary:hover {
   background-color: #ddd;
+  color: #f37432;
+  font-family: 'Montserrat', sans-serif;
 }
 
 /* Set font family for elements */
@@ -94,6 +100,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .button {
   font-weight: 700; /* Bold */
+  font-family: 'Montserrat', sans-serif;
 }
 
 p {
