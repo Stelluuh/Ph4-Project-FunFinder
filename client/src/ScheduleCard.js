@@ -93,7 +93,7 @@ const ScheduleCard = ({ schedule, activities }) => {
             {showDetails && ( //if showDetails is true, then show the details
               <div className="schedule-card">
                 <p>Description: {schedule.activity.description}</p>
-                <p>Duration: {schedule.activity.duration}</p>
+                <p>Duration: {schedule.activity.duration} minutes</p>
               </div>
             )}
           </div>
