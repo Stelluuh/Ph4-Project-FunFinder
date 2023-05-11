@@ -12,9 +12,11 @@ const Activities = () => {
     checkLogin()
   }, [])
 
-  const renderAllActivities = allActivities.map(activity => {
-    return <ActivityCard key={activity.id} activity={activity}/>
-  })
+
+  // const renderAllActivities = allActivities.map(activity => {
+  //   return <ActivityCard key={activity.id} activity={activity}/>
+  // })
+  
 
 
   
@@ -26,7 +28,10 @@ const Activities = () => {
           <h1>activities<span class="list">list</span></h1>
             <ActivityForm />
           <div className="activity-cards">
-            {renderAllActivities}
+            {/* {renderAllActivities} */}
+            {allActivities.map(activity => {
+              return <ActivityCard key={activity.id} activity={activity}/>
+            })}
           </div>
   
         </>
@@ -38,10 +43,3 @@ const Activities = () => {
 }
 
 export default Activities
-
-// //Activities that belong to user only
-// const userActivities = user?.activities?.map(
-//   activity => {
-//     return <ActivityCard key={activity.id} activity={activity}/>
-//   }
-// )

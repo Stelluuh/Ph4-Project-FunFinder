@@ -10,7 +10,8 @@ const Home = () => {
     return (
       <div className="home">
         <h1>{user.name}'s <span class='fun-finder'>fun-finder</span></h1>
-        <p>FunFinder is an app that allows you to quickly find a list of activities for your kids. You can add an activity to your list or select an activity from our pre-populated list. Once you've created a list, you can schedule those activities for specific times of day. We hope you enjoy using FunFinder to make planning your family's activities a breeze!</p>
+        <p>FunFinder is an app that helps you quickly find close-to-home activities for your kids. Just look through the activity list and select those that interest your child. Then create a schedule with the days and times that work best for you.</p>
+        <h3>Planning your family's activities is a breeze with FunFinder!</h3>
       </div>
     )
   } else { 
@@ -18,7 +19,8 @@ const Home = () => {
       <div className="home">
         <h1>Welcome to FunFinder Homepage</h1>
         <h3>Please Login or Signup</h3>
-        <p>FunFinder is an app that allows you to quickly find a list of activities for your kids. You can add an activity to your list or select an activity from our pre-populated list. Once you've created a list, you can schedule those activities for specific times of day. We hope you enjoy using FunFinder to make planning your family's activities a breeze!</p>
+        <p>FunFinder is an app that helps you quickly find close-to-home activities for your kids. Just look through the activity list and select those that interest your child. Then create a schedule with the days and times that work best for you.</p>
+        <h3>Planning your family's activities is a breeze with FunFinder!</h3>
       </div>
     )
   }
