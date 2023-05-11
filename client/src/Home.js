@@ -11,7 +11,7 @@ const Home = () => {
       <div className="home">
         <h1>{user.name}'s <span class='fun-finder'>fun-finder</span></h1>
         <p>FunFinder is an app that helps you quickly find close-to-home activities for your kids. Just look through the activity list and select those that interest your child. Then create a schedule with the days and times that work best for you.</p>
-        <h3>Planning your family's activities is a breeze with FunFinder!</h3>
+        <p>Planning your family's activities is a breeze with FunFinder!</p>
       </div>
     )
   } else { 
@@ -20,7 +20,7 @@ const Home = () => {
         <h1>Welcome to FunFinder Homepage</h1>
         <h3>Please Login or Signup</h3>
         <p>FunFinder is an app that helps you quickly find close-to-home activities for your kids. Just look through the activity list and select those that interest your child. Then create a schedule with the days and times that work best for you.</p>
-        <h3>Planning your family's activities is a breeze with FunFinder!</h3>
+        <p>Planning your family's activities is a breeze with FunFinder!</p>
       </div>
     )
   }

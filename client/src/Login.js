@@ -8,7 +8,7 @@ const Login = () => {
   const [password, setPassword] = useState('')
   const [errors, setErrors] = useState([])
 
-  const { login } = useContext(UserContext) // we get the login function from the UserContext because we need to update the user state in the UserContext
+  const { login } = useContext(UserContext)
   const navigate = useNavigate()
 
   const handleSubmit = (e) => {
@@ -20,25 +20,22 @@ const Login = () => {
     fetch('/login', {
       method: 'POST',
       headers: {
-        'Content-Type': 'application/json' // we are sending json data to the server
+        'Content-Type': 'application/json' 
       }, 
-      body: JSON.stringify({ // we are sending the username and password from the form to the server
+      body: JSON.stringify({ 
         username: username,
         password: password
       })
     })
-      .then(response => response.json()) // we are getting the response back from the server and converting it to json
-      .then(user => { // we are getting the user back from the server
+      .then(response => response.json()) 
+      .then(user => { 
         console.log('from login- user.error:', user.error)
         console.log('from login- user:', user)
-        // if no errors:
-        //   we login the user by calling the login function from the UserContext
-        //   direct to homepage
+       
         if(!user.errors) {
           login(user)
           navigate('/')
         } else {
-        // if errors = display on page
           setUsername('')
           setPassword('')
           const logError = user.errors.map((error) => <li>{error}</li>)
@@ -68,7 +65,6 @@ const Login = () => {
         />
         <br/>
         <input type='submit'/>
-        {/* <Button type='submit' variant="outlined">submit</Button> */}
         <ul>
           {errors}
         </ul>

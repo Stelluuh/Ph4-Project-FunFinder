@@ -31,17 +31,6 @@ const ScheduleCard = ({ schedule, activities }) => {
         setActivityId(schedule.activity.id)
     }
 
-    //INSTEAD OF THIS, WE CAN DO schedule.activity.name
-    // const userActivities = activities.map(activity => {
-    //     if (activity.id === schedule.activity_id) {
-    //         return <li key={activity.id}>{activity.name}</li>
-    //     } else {
-    //         return null
-    //     }
-    // })
-
-    // console.log(userActivities)
-
     if (!isLoggedIn) { //if the user is not logged in, they will see this message
         return (
           <div className="schedule-card">
