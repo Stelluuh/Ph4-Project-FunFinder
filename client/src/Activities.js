@@ -12,14 +12,6 @@ const Activities = () => {
     checkLogin()
   }, [])
 
-
-  // const renderAllActivities = allActivities.map(activity => {
-  //   return <ActivityCard key={activity.id} activity={activity}/>
-  // })
-  
-
-
-  
   
   return (
     <div className="activities-container">
@@ -28,7 +20,6 @@ const Activities = () => {
           <h1>activities<span class="list">list</span></h1>
             <ActivityForm />
           <div className="activity-cards">
-            {/* {renderAllActivities} */}
             {allActivities.map(activity => {
               return <ActivityCard key={activity.id} activity={activity}/>
             })}
