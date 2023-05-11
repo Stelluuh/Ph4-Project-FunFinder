@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { useNavigate } from 'react-router-dom'
+import { useNavigate, useLocation } from 'react-router-dom'
 
 //This will be used to create a context object with a default value of null
 const UserContext = React.createContext();
@@ -12,6 +12,7 @@ const UserProvider = ({ children }) => {
   const [errors, setErrors] = useState([])
   
   const navigate = useNavigate()
+  const location = useLocation()
   
     // useEffect(() => {
     //     fetch('/me') 
@@ -52,6 +53,10 @@ const UserProvider = ({ children }) => {
       .then(data => setAllActivities(data))
     }, [isLoggedIn])
 
+    useEffect(() => {
+      setErrors([])
+    }, [location.pathname]) // this will clear the errors array whenever the user navigates to a new page
+
     const addActivity = (activity) => {
       fetch('/activities', {
         method: 'POST',
@@ -60,12 +65,17 @@ const UserProvider = ({ children }) => {
       })
       .then(response => response.json())
       .then(newActivity => {
+        if(!newActivity.errors) {
         console.log(newActivity)
         setAllActivities([...allActivities, newActivity])
+      } else {
+        const errorLi = newActivity.errors.map(error => <li key={error}>{error}</li>)
+        setErrors(errorLi)
+        }
       })
     }
 
-    const addSchedule = (schedule) => { // schedule is the data we get back from the server from a form submission.
+    const addSchedule = (schedule, setSubmitted, addScheduleFlag) => { // schedule is the data we get back from the server from a form submission.
       fetch('/schedules', {
         method: 'POST', 
         headers: {'Content-Type': 'application/json'},
@@ -78,6 +88,9 @@ const UserProvider = ({ children }) => {
         } else {
           const errorLi= newSchedule.errors.map(error => <li key={error}>{error}</li>)
           setErrors(errorLi)
+          // setSubmitted(true)
+          // addScheduleFlag(true)
+
         }
       })    
     }
@@ -121,6 +134,7 @@ const UserProvider = ({ children }) => {
       setUser({})
       setIsLoggedIn(false)
       navigate('/')
+      setErrors([])
       
    }
 

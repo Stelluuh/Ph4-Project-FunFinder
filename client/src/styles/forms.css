@@ -55,7 +55,7 @@ form {
     
     /* Error messages */
     ul {
-    color: #ff6b6b;
+    color: #b52c2c;
     font-size: 16px;
     margin-top: 10px;
     list-style: none;
@@ -71,10 +71,10 @@ form {
     }
     
     /* Additional kid-friendly color */
-    input[type="text"]:focus,
+    /* input[type="text"]:focus,
     input[type="password"]:focus,
     input[type="submit"]:focus {
     background-color: #FFF9DE;
-    }
+    } */
    
   

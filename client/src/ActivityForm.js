@@ -7,7 +7,10 @@ const ActivityForm = () => {
     const [description, setDescription] = useState('')
     const [childsAge, setChildsAge] = useState('')
     const [duration, setDuration] = useState('')
-    const { addActivity } = useContext(UserContext)
+    const [submitted, setSubmitted] = useState(false)
+    
+    const { addActivity, errors } = useContext(UserContext)
+
 
     const handleSubmit = (e) => {
         e.preventDefault()
@@ -21,6 +24,7 @@ const ActivityForm = () => {
         setDescription('')
         setChildsAge('')
         setDuration('')
+        setSubmitted(true)
     }
 
   return (
@@ -57,6 +61,11 @@ const ActivityForm = () => {
         />
         <input type="submit" value="Add Activity"/>
       </form>
+      <ul>
+        {errors}
+      </ul>
+      {!errors && submitted && <p>Activity Added!</p>}
+
     </div>
   )
 }

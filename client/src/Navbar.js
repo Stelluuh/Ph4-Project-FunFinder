@@ -5,7 +5,7 @@ import { NavLink, useNavigate } from 'react-router-dom'
 const Navbar = () => {
 
 
-  const { user, isLoggedIn, logout } = useContext(UserContext)
+  const { isLoggedIn, logout } = useContext(UserContext)
   const navigate = useNavigate()
 
   const handleLogout = () => { // when the user clicks the logout button, we send a DELETE request to /logout
