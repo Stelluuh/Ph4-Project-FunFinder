@@ -92,7 +92,6 @@ const ScheduleCard = ({ schedule, activities }) => {
             </div>
             {showDetails && ( //if showDetails is true, then show the details
               <div className="schedule-card">
-                <p>Child's age: {schedule.activity.childs_age}</p>
                 <p>Description: {schedule.activity.description}</p>
                 <p>Duration: {schedule.activity.duration}</p>
               </div>
