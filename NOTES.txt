@@ -1,0 +1,26 @@
+1a. In some of my components, for example, the Activity component, What is the point of having a useEffect hook to run checkLogin() function?
+    Answer: (its not needed in the src components. only in the authcontext file)
+        The useEffect hook with checkLogin function as its callback is used to check if the user is logged in or not, and update the isLoggedIn state accordingly. It is executed once, after the component is mounted, due to an empty dependency array as a second argument.
+
+        The checkLogin function sends a request to the /me endpoint to check if the user is authenticated or not. If the response includes an errors property, then the user is not authenticated, and setIsLoggedIn(false) is called. Otherwise, the setUser function updates the user state with the user object returned by the server, and setIsLoggedIn(true) is called.
+
+        By updating the isLoggedIn state, the component re-renders and displays either the activities or the login/signup message, depending on the user's authentication status.
+
+        Overall, this hook is used to synchronize the isLoggedIn state with the user's authentication status.
+
+1b. Will my code work without it?
+    Answer:
+        It depends on the purpose of the checkLogin function. If the purpose of checkLogin is to verify if the user is authenticated, then removing the useEffect that calls the function would cause the authentication to not happen, and the user would not be able to access the component.
+
+        However, if the purpose of checkLogin is to retrieve user information from the server, it may be possible to remove the useEffect call without any issues, as long as the data is still being retrieved from the server somewhere else in the code.
+
+        In general, useEffect is used to perform some side effects, like fetching data from an external API, subscribing to a WebSocket connection, or updating the document title. In this specific case, useEffect is used to call checkLogin when the component mounts. This ensures that the user's authentication status is checked and updated whenever the component is rendered.
+
+
+2 Do I need to have the useEffect to called checkLogin() in my AuthContext.js file?
+    Answer:
+        The useEffect hook you have provided checks whether the user is logged in or not by calling the checkLogin() function, which sends a request to the server to get the user data and then sets the state of isLoggedIn and user accordingly.
+
+        If you remove the useEffect hook, the checkLogin() function will not be called automatically when the component mounts, which means that the initial state of isLoggedIn and user will not be set. You will have to call the checkLogin() function explicitly in your component to set the state of isLoggedIn and user based on the response from the server.
+
+        Therefore, it depends on your use case whether you need the useEffect hook or not. If you want to check the user's login status automatically when the component mounts, then you need the useEffect hook. If you want to check the login status at a later point in time, you can remove the useEffect hook and call the checkLogin() function when you need to.
