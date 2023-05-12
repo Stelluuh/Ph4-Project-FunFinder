@@ -6,11 +6,11 @@ import './styles/Activities.css'
 
 
 const Activities = () => {
-  const { isLoggedIn, checkLogin, allActivities } = useContext(UserContext)
+  const { isLoggedIn, allActivities } = useContext(UserContext)
 
-  useEffect(() => {
-    checkLogin()
-  }, [])
+  // useEffect(() => {
+  //   checkLogin()
+  // }, [])
 
   
   return (
