@@ -1,18 +1,14 @@
-import React, { useContext, useEffect, useState } from 'react'
+import React, { useContext, useState } from 'react'
 import { UserContext } from './context/AuthContext'
 import './styles/ScheduleCard.css' 
 
 const ScheduleCard = ({ schedule, activities }) => {
-    const { deleteSchedule, updateSchedule, isLoggedIn, checkLogin } = useContext(UserContext)
+    const { deleteSchedule, updateSchedule, isLoggedIn } = useContext(UserContext)
     const [editing, setEditing] = useState(false)
     const [timeOfDay, setTimeOfDay] = useState(schedule.time_of_day)
     const [activityId, setActivityId]= useState(schedule.activity.id)
     const [showDetails, setShowDetails] = useState(false)
     
-
-    useEffect(() => {
-        checkLogin()
-    }, [])
 
     const handleSubmit = (e) => {
         e.preventDefault();
