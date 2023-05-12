@@ -17,10 +17,21 @@
         In general, useEffect is used to perform some side effects, like fetching data from an external API, subscribing to a WebSocket connection, or updating the document title. In this specific case, useEffect is used to call checkLogin when the component mounts. This ensures that the user's authentication status is checked and updated whenever the component is rendered.
 
 
-2 Do I need to have the useEffect to called checkLogin() in my AuthContext.js file?
+2. Do I need to have the useEffect to called checkLogin() in my AuthContext.js file?
     Answer:
         The useEffect hook you have provided checks whether the user is logged in or not by calling the checkLogin() function, which sends a request to the server to get the user data and then sets the state of isLoggedIn and user accordingly.
 
         If you remove the useEffect hook, the checkLogin() function will not be called automatically when the component mounts, which means that the initial state of isLoggedIn and user will not be set. You will have to call the checkLogin() function explicitly in your component to set the state of isLoggedIn and user based on the response from the server.
 
         Therefore, it depends on your use case whether you need the useEffect hook or not. If you want to check the user's login status automatically when the component mounts, then you need the useEffect hook. If you want to check the login status at a later point in time, you can remove the useEffect hook and call the checkLogin() function when you need to.
+
+3. useLocation hook -> Why did I use this in my AuthContext File?
+    https://reactrouter.com/en/main/hooks/use-location
+    
+    const location = useLocation()
+
+     useEffect(() => {
+      setErrors([])
+    }, [location.pathname]) // this will clear the errors array whenever the user navigates to a new page
+
+    This hook returns the current location object. This can be useful if you'd like to perform some side effect whenever the current location changes.
