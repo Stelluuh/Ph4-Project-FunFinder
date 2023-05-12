@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   
   resources :schedules
-  resources :activities
+  resources :activities, only: [:index, :create]
   resources :users, only: [:create, :show]
   post '/login', to: 'sessions#create'
   delete '/logout', to: 'sessions#destroy'
