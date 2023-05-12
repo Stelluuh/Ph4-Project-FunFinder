@@ -1,3 +1,71 @@
+--------------- POSSIBLE REVIEW QUESTIONS ------------------
+
+Keep in mind that this is not an all-inclusive list but should at least help you prepare. 
+
+	1. Generators in Ruby on Rails are a great way to quickly create folders and files. Could you name a few? What are the specific differences between them?
+	
+	2. What determines the keys in a params hash? 
+	
+	3. What are strong params and why do we use them?
+	
+	4. How do you make a custom route? 
+	
+	5. What are all the routes we get when we type in `resources :users`?
+	
+	6. How can you check the list of all the routes you created?
+	
+	7. How do you set up nested routes? Why would you use a nested route?
+	
+	8. What are some of the methods that we get from the belongs_to macro?  For example, if we say `belongs_to :user`, what methods do we now have access to?
+	
+	9. What does the .build method do and can you give an example of when to use it?
+	
+	10. How do you set up a many-to-many relationship?
+	
+	11. How can you tell if a table is a join table?
+	
+	12. If you wanted to add an additional attribute to a model, how would you do that?
+	
+	13. What’s the difference between `.new` and `.create`?
+	
+	14. What type of model validations do you know?
+	
+	15. How do model validations work in general?
+	
+	16. How can you find out what validations failed and why?
+	
+	17. Which methods will trigger model validations to run? Could you name a few methods that won’t?
+	
+	18. What’s the difference between find and find_by?
+	
+	19. How do you rescue exceptions in Rails?
+	
+	20. What methods and validations do we get from has_secure_password?
+	
+	21. Why do we use .authenticate? What does it do?
+	
+	22. How do you implement authentication in Rails?
+	
+	23. What are sessions?
+	
+	24. What are cookies?
+	
+	25. What is the difference between a POST request and a GET request?
+	
+	26. What are all the steps you need to take if you want to add in a new route? 
+	
+	27. When should you use helpers?
+	
+	28. When should you use scope methods? 
+	
+	29. How do you write a scope method?
+	
+	30. What does it mean when you get this error message: undefined method ‘user’ for NilClass?
+	
+    31. What do we mean by serialization and how can you serialize data in Rails?
+
+--------------------- PROJECT QUESTIONS ---------------------
+
 1a. In some of my components, for example, the Activity component, What is the point of having a useEffect hook to run checkLogin() function?
     Answer: (its not needed in the src components. only in the authcontext file)
         The useEffect hook with checkLogin function as its callback is used to check if the user is logged in or not, and update the isLoggedIn state accordingly. It is executed once, after the component is mounted, due to an empty dependency array as a second argument.
