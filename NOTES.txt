@@ -9,10 +9,15 @@ Keep in mind that this is not an all-inclusive list but should at least help you
 	3. What are strong params and why do we use them?
 	
 	4. How do you make a custom route? 
-	
+        - in the routes.rb file, to define a route, you need to define:
+            a. an http verb to tell waht kind of request you are sending to the server
+            b. a path or url like /shop which defines that we are making an http request to this route
+            c. then we say a controller#action =  shop#index meaning that we are going to the shop controller and running the index action.
+        
 	5. What are all the routes we get when we type in `resources :users`?
 	
 	6. How can you check the list of all the routes you created?
+        - In the console, type: rails routes
 	
 	7. How do you set up nested routes? Why would you use a nested route?
 	
@@ -63,6 +68,35 @@ Keep in mind that this is not an all-inclusive list but should at least help you
 	30. What does it mean when you get this error message: undefined method ‘user’ for NilClass?
 	
     31. What do we mean by serialization and how can you serialize data in Rails?
+
+    --EXTRA QUESTIONS--
+
+    32. What is Active Record?
+        - It is a buit in ORM (object relational mapper). ORM is a module that enables your application to manage data in a method-driven-structure (via queries, adding records, and any database processes instead of writing SQL manually.)
+        
+                        SQL:
+                        SELECT * FROM cheeses
+
+                        ACTIVE RECORD:
+                        Cheese.all
+
+    33. A model file is a RUBY CLASS. WHy?
+        - it inherits from ActiveRecord::Base class, which mens it has access to a number of methods that assist in working with the database. You can treat it like a regular Ruby class: create methods, data attributes, and evertyhing you can do in a class file.
+
+    34. A model file contain code such as but not limited to the following:
+
+        -Custom scopesLinks to an external site.
+        -Model instance methods
+        -Default settings for database columns
+        -ValidationsLinks to an external site.
+        -Model-to-model relationshipsLinks to an external site.
+        -CallbacksLinks to an external site.
+        -Custom algorithms
+
+    35. How are models connected to the database via Active Record?
+        - Active Record is an ORM that maps database tables to Ruby classes and provides methods for querying and manipulating data in the database.
+        - a model interacts with the database table via Active Record.
+
 
 --------------------- PROJECT QUESTIONS ---------------------
 
