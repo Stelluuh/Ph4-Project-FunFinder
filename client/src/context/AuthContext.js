@@ -40,7 +40,6 @@ const UserProvider = ({ children }) => {
           setIsLoggedIn(!data.errors);
 
         })
-        .catch(error => console.error(error));
     };
   
     useEffect(() => {
