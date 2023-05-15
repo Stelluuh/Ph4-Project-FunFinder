@@ -3,21 +3,19 @@
 Keep in mind that this is not an all-inclusive list but should at least help you prepare. 
 
 	1. Generators in Ruby on Rails are a great way to quickly create folders and files. Could you name a few? What are the specific differences between them?
-	
-	2. What determines the keys in a params hash? 
-	
+      
+    2. What determines the keys in a params hash? 
+       
 	3. What are strong params and why do we use them?
+
 	
 	4. How do you make a custom route? 
-        - in the routes.rb file, to define a route, you need to define:
-            a. an http verb to tell waht kind of request you are sending to the server
-            b. a path or url like /shop which defines that we are making an http request to this route
-            c. then we say a controller#action =  shop#index meaning that we are going to the shop controller and running the index action.
         
 	5. What are all the routes we get when we type in `resources :users`?
+
 	
 	6. How can you check the list of all the routes you created?
-        - In the console, type: rails routes
+   
 	
 	7. How do you set up nested routes? Why would you use a nested route?
 	
