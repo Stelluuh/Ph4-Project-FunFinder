@@ -6,9 +6,10 @@ class SchedulesController < ApplicationController
         render json: schedules
     end
 
-    def show
-        render json: @schedule
-    end
+    # def show
+    #     # render json: @schedule
+    #     render json: Schedule.find(params[:id])
+    # end
 
     def create
         schedule = current_user.schedules.create!(schedule_params)
@@ -17,7 +18,7 @@ class SchedulesController < ApplicationController
 
     def update
         #find the schedule OF LOGGED IN USER that matches the ID from route params
-        schedule = current_user.schedules.find_by(id: params[:id])
+        schedule = current_user.schedules.find(params[:id])
         #update the schedule with the data from the form
         schedule.update!(schedule_params)
         render json: schedule, status: :accepted
@@ -36,7 +37,7 @@ class SchedulesController < ApplicationController
 
 
     def current_user
-        User.find_by(id: session[:user_id])
+        User.find(session[:user_id])
     end
 
     def schedule_params
