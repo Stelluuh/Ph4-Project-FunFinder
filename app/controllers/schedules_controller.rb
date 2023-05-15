@@ -7,8 +7,7 @@ class SchedulesController < ApplicationController
     end
 
     # def show
-    #     # render json: @schedule
-    #     render json: Schedule.find(params[:id])
+    #     render json: current_user.schedules.find(params[:id])
     # end
 
     def create
