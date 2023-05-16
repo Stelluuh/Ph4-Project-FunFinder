@@ -74,7 +74,7 @@ const UserProvider = ({ children }) => {
       })
     }
 
-    const addSchedule = (schedule, setSubmitted, addScheduleFlag) => { // schedule is the data we get back from the server from a form submission.
+    const addSchedule = (schedule) => { // schedule is the data we get back from the server from a form submission.
       fetch('/schedules', {
         method: 'POST', 
         headers: {'Content-Type': 'application/json'},
@@ -87,8 +87,6 @@ const UserProvider = ({ children }) => {
         } else {
           const errorLi= newSchedule.errors.map(error => <li key={error}>{error}</li>)
           setErrors(errorLi)
-          // setSubmitted(true)
-          // addScheduleFlag(true)
 
         }
       })    
