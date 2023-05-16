@@ -28,8 +28,6 @@ const UserProvider = ({ children }) => {
           } else
           // setUser(data);
           setIsLoggedIn(true);
-          // setIsLoggedIn(!data.errors);
-
         })
     };
   
