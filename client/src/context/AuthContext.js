@@ -14,19 +14,6 @@ const UserProvider = ({ children }) => {
   const navigate = useNavigate()
   const location = useLocation()
   
-    // useEffect(() => {
-    //     fetch('/me') 
-    //         .then(response => response.json()) // we are getting the response back from the server and converting it to json
-    //         .then(data => {
-                
-    //             setUser(data) // setting the user state to the data we get back from the server
-    //             if (data.errors) { // if the data has an error property, set isLoggedIn to false, otherwise set it to true
-    //               setIsLoggedIn(false)
-    //             } else {
-    //               setIsLoggedIn(true)
-    //             }
-    //         })
-    // }, [])
 
     const checkLogin = () => {
       fetch('/me')
@@ -37,7 +24,8 @@ const UserProvider = ({ children }) => {
             setErrors(data.errors)
           } else
           setUser(data);
-          setIsLoggedIn(!data.errors);
+          setIsLoggedIn(true);
+          // setIsLoggedIn(!data.errors);
 
         })
     };
