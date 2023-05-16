@@ -5,6 +5,7 @@ import './styles/Home.css'
 const Home = () => {
 
   const { user, isLoggedIn } = useContext(UserContext)
+  console.log(isLoggedIn)
 
   if(isLoggedIn) { // if the user is logged in, display the home page
     return (
