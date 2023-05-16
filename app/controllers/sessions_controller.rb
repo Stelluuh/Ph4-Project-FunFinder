@@ -1,6 +1,6 @@
 class SessionsController < ApplicationController
 
-    skip_before_action :authorize, only: [:create]
+    skip_before_action :authorize, only: :create
     
     #LOGIN
     # from routes: post '/login', to: 'sessions#create'
