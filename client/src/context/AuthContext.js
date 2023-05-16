@@ -15,15 +15,18 @@ const UserProvider = ({ children }) => {
   const location = useLocation()
   
 
+
+
     const checkLogin = () => {
       fetch('/me')
         .then(response => response.json())
         .then(data => {
+          setUser(data)
           if (data.errors) {
             setIsLoggedIn(false)
             setErrors(data.errors)
           } else
-          setUser(data);
+          // setUser(data);
           setIsLoggedIn(true);
           // setIsLoggedIn(!data.errors);
 
@@ -32,7 +35,7 @@ const UserProvider = ({ children }) => {
   
     useEffect(() => {
       checkLogin();
-    }, []);
+    }, [isLoggedIn]);
 
     useEffect(() => {
       fetch('/activities')
