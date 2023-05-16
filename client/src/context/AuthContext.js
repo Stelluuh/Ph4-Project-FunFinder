@@ -56,6 +56,7 @@ const UserProvider = ({ children }) => {
         if(!newActivity.errors) {
         console.log(newActivity)
         setAllActivities([...allActivities, newActivity])
+        setErrors([])
       } else {
         const errorLi = newActivity.errors.map(error => <li key={error}>{error}</li>)
         setErrors(errorLi)
@@ -73,6 +74,7 @@ const UserProvider = ({ children }) => {
       .then(newSchedule => {
         if (!newSchedule.errors) {
         setUser({ ...user, schedules: [...user.schedules, newSchedule]})
+        setErrors([])
         } else {
           const errorLi= newSchedule.errors.map(error => <li key={error}>{error}</li>)
           setErrors(errorLi)
