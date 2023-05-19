@@ -65,6 +65,7 @@ const UserProvider = ({ children }) => {
     }
 
     const addSchedule = (schedule) => { // schedule is the data we get back from the server from a form submission.
+      console.log(schedule)
       fetch('/schedules', {
         method: 'POST', 
         headers: {'Content-Type': 'application/json'},
@@ -84,6 +85,7 @@ const UserProvider = ({ children }) => {
     }
 
     const updateSchedule = (updatedSchedule) => {
+      console.log(updatedSchedule)
       fetch(`/schedules/${updatedSchedule.id}`, {
         method: 'PATCH',
         headers: {'Content-Type': 'application/json'},

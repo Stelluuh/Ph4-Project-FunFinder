@@ -4,7 +4,7 @@ import './styles/ActivityCard.css'
 
 const ActivityCard = ({activity}) => {
   const { isLoggedIn } = useContext(UserContext)
-  // console.log({activity})
+  console.log({activity})
   const {name, childs_age, description, duration} = activity
 
   if (!isLoggedIn) {
@@ -21,6 +21,7 @@ const ActivityCard = ({activity}) => {
       <p>age: {childs_age}</p>
       <p>{description}</p>
       <p>{duration} minutes</p>
+      
     </div>
 
   )
