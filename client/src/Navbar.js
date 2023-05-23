@@ -8,14 +8,14 @@ const Navbar = () => {
   const { isLoggedIn, logout } = useContext(UserContext)
   const navigate = useNavigate()
 
-  const handleLogout = () => { // when the user clicks the logout button, we send a DELETE request to /logout
+  const handleLogout = () => { 
       fetch('/logout', {
         method: 'DELETE',
         headers: { 'Content-Type': 'application/json'} //
       })
       .then(() => {
         console.log('logged out')
-        logout() // we logout the user by calling the logout function from the UserContext
+        logout()
         navigate('/')
       })
     }
