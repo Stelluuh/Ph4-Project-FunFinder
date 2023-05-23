@@ -28,13 +28,11 @@ const Signup = () => {
                 password_confirmation: passwordConfirmation
             })
         })
-            .then(response => response.json()) // we are getting the response back from the server and converting it to json
+            .then(response => response.json()) 
             .then(user => {
                 console.log(user)
-                // we signup the user by calling the signup function from the UserContext
                     if (!user.errors) {
                         signup(user)
-                        // if there are no errors, redirect to the home page? navigate('/')
                         navigate('/')
                     } else {
                         const listErrors = user.errors.map((error) => <li>{error}</li>)
@@ -43,13 +41,8 @@ const Signup = () => {
                         setPassword('')
                         setPasswordConfirmation('')
                     }
-                    //We do this by using the navigate function from react-router-dom
-                // if there are errors, display them.
-                     // We do this by setting the errorsList state to the errors we get back from the server
             })
       
-           
-
     }
   return (
     <div>
