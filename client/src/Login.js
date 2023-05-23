@@ -13,9 +13,6 @@ const Login = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault()
-    // create a POST request to /login
-    // if there are no errors, redirect to the home page
-    // if there are errors, display them
     
     fetch('/login', {
       method: 'POST',
