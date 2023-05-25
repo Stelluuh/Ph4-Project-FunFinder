@@ -10,10 +10,6 @@ class ActivitiesController < ApplicationController
         render json: activity, status: :created
     end
 
-    def activity_description_length
-        activities = Activity.all.select{|a| a.description.length <= params[:n].to_i}
-        render json: activities
-    end
 
     private
 
