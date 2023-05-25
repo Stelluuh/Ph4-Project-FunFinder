@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
   
+  get '/activity_description_length/:n', to: 'activities#activity_description_length'
+
   resources :schedules
   resources :activities, only: [:index, :create]
   resources :users, only: [:create, :show]
