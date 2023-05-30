@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
   
-
   resources :schedules
   resources :activities, only: [:index, :create]
   resources :users, only: [:create, :show]

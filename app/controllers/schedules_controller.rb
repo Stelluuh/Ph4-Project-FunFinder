@@ -5,28 +5,20 @@ class SchedulesController < ApplicationController
         schedules = current_user.schedules
         render json: schedules
     end
-
-    # def show
-    #     render json: current_user.schedules.find(params[:id])
-    # end
-
+    
     def create
         schedule = current_user.schedules.create!(schedule_params)
         render json: schedule, status: :created
     end
 
     def update
-        #find the schedule OF LOGGED IN USER that matches the ID from route params
         schedule = current_user.schedules.find(params[:id])
-        #update the schedule with the data from the form
         schedule.update!(schedule_params)
         render json: schedule, status: :accepted
     end
 
     def destroy
-        #find the schedule OF LOGGED IN USER that matches the ID from route params
         schedule = current_user.schedules.find_by(id: params[:id])
-        # if schedule exists, destroy it
         schedule.destroy
         head :no_content
      

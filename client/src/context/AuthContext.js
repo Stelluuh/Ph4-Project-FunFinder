@@ -73,6 +73,7 @@ const UserProvider = ({ children }) => {
       })
       .then(response => response.json())
       .then(newSchedule => {
+        console.log(newSchedule)
         if (!newSchedule.errors) {
         setUser({ ...user, schedules: [...user.schedules, newSchedule]})
         setErrors([])
