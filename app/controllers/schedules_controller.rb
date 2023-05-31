@@ -32,7 +32,7 @@ class SchedulesController < ApplicationController
     end
 
     def schedule_params
-        params.permit(:time_of_day, :user_id, :activity_id)
+        params.permit(:time_of_day, :activity_id)
     end
 
 
